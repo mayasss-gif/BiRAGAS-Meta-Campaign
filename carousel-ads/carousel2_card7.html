@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<title>Carousel 2 - Card 7: Phase 7 Inspection & Arbitration</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px; height: 1080px;
+    font-family: 'Inter', sans-serif;
+    background: #0A1628;
+    overflow: hidden;
+    position: relative;
+  }
+  .phase-bg {
+    position: absolute; top: -40px; right: -40px;
+    font-size: 360px; font-weight: 900;
+    color: rgba(255,255,255,0.03);
+    line-height: 1;
+  }
+  .accent-glow {
+    position: absolute;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    filter: blur(160px);
+    opacity: 0.06;
+    bottom: -100px; left: -100px;
+  }
+  .content {
+    position: relative; z-index: 2;
+    width: 100%; height: 100%;
+    display: flex; flex-direction: column;
+    padding: 60px 80px 100px;
+  }
+  .top-bar {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 40px;
+  }
+  .phase-label {
+    font-size: 16px; font-weight: 700;
+    color: rgba(255,255,255,0.8);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+  }
+  .indicator {
+    font-size: 20px; font-weight: 700;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 2px;
+  }
+  .phase-number {
+    font-size: 100px; font-weight: 900;
+    color: rgba(255,255,255,0.9);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .phase-name {
+    font-size: 46px; font-weight: 900;
+    color: #FFFFFF;
+    line-height: 1.1;
+    margin-bottom: 50px;
+  }
+  .icon-container {
+    width: 100px; height: 100px;
+    margin-bottom: 40px;
+  }
+  .bullets {
+    list-style: none;
+    flex: 1;
+  }
+  .bullets li {
+    display: flex; align-items: center;
+    font-size: 24px; font-weight: 500;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 24px;
+  }
+  .bullet-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    margin-right: 20px;
+    flex-shrink: 0;
+  }
+  .branding {
+    position: absolute; bottom: 40px; left: 0; right: 0;
+    text-align: center;
+  }
+  .brand-name {
+    font-size: 20px; font-weight: 800;
+    color: #FFFFFF;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .brand-tagline {
+    font-size: 13px; font-weight: 400;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .top-accent {
+    position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.8), rgba(255,255,255,0.3));
+  }
+  .side-accent {
+    position: absolute; left: 0; top: 0; bottom: 0; width: 5px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.6), transparent);
+  }
+</style>
+</head>
+<body>
+<div class="top-accent"></div>
+<div class="side-accent"></div>
+<div class="phase-bg">07</div>
+<div class="accent-glow"></div>
+
+<div class="content">
+  <div class="top-bar">
+    <span class="phase-label">Phase 7 of 7</span>
+    <span class="indicator">7 / 7</span>
+  </div>
+
+  <div class="phase-number">07</div>
+  <h1 class="phase-name">Inspection &amp;<br>Arbitration</h1>
+
+  <div class="icon-container">
+    <svg width="100" height="100" viewBox="0 0 100 100">
+      <!-- Clipboard with checkmark -->
+      <rect x="22" y="10" width="56" height="80" rx="6" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="2.5"/>
+      <rect x="35" y="4" width="30" height="14" rx="4" fill="#0A1628" stroke="rgba(255,255,255,0.8)" stroke-width="2"/>
+      <circle cx="50" cy="11" r="3" fill="rgba(255,255,255,0.6)"/>
+      <!-- Check -->
+      <path d="M36 50 L46 60 L66 38" fill="none" stroke="#2DC653" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- Lines -->
+      <line x1="34" y1="74" x2="66" y2="74" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+      <line x1="34" y1="82" x2="55" y2="82" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+    </svg>
+  </div>
+
+  <ul class="bullets">
+    <li><span class="bullet-dot"></span>5-layer evidence audit</li>
+    <li><span class="bullet-dot"></span>Gap analysis &amp; conflict resolution</li>
+    <li><span class="bullet-dot"></span>LLM-powered arbitration</li>
+    <li><span class="bullet-dot"></span>Regulatory-grade reporting</li>
+  </ul>
+
+  <div class="branding">
+    <div class="brand-name">Ayass Bioscience</div>
+    <div class="brand-tagline">Intelligent Biology in Motion</div>
+  </div>
+</div>
+</body>
+</html>

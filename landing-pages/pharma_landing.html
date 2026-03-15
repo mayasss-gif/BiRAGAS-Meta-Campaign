@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BiRAGAS for Pharma | Ayass Bioscience</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --navy: #0A1628;
+  --navy-light: #0f2140;
+  --navy-mid: #132a4a;
+  --teal: #00B4D8;
+  --teal-dark: #0096b7;
+  --white: #FFFFFF;
+  --gold: #FFB703;
+  --gold-dark: #e0a200;
+  --gray-100: #f0f4f8;
+  --gray-200: #d9e2ec;
+  --gray-300: #9fb3c8;
+  --gray-400: #627d98;
+  --glass-bg: rgba(255,255,255,0.05);
+  --glass-border: rgba(255,255,255,0.1);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--navy);
+  color: var(--white);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Scroll Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* Navigation */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1rem 2rem;
+  transition: all 0.4s ease;
+  background: transparent;
+}
+.nav.scrolled {
+  background: rgba(10, 22, 40, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+  padding: 0.6rem 2rem;
+}
+.nav-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  text-decoration: none;
+}
+.nav-logo span { color: var(--teal); }
+.nav-cta {
+  background: var(--teal);
+  color: var(--navy);
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+.nav-cta:hover {
+  background: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,180,216,0.3);
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 2rem 6rem;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 20% 50%, rgba(0,180,216,0.08) 0%, transparent 60%),
+              radial-gradient(ellipse at 80% 20%, rgba(255,183,3,0.05) 0%, transparent 50%),
+              var(--navy);
+}
+.hero-bg-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.15;
+  z-index: 0;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  text-align: center;
+}
+.hero-badge {
+  display: inline-block;
+  padding: 0.4rem 1.2rem;
+  border-radius: 100px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--teal);
+  border: 1px solid rgba(0,180,216,0.3);
+  background: rgba(0,180,216,0.08);
+  margin-bottom: 2rem;
+}
+.hero h1 {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, var(--white) 0%, var(--gray-200) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero h1 em {
+  font-style: normal;
+  background: linear-gradient(135deg, var(--teal) 0%, var(--gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero p {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: var(--gray-300);
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.7;
+}
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2.5rem;
+  background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
+  color: var(--navy);
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+  border-radius: 12px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 20px rgba(0,180,216,0.3);
+}
+.hero-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0,180,216,0.4);
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+}
+.hero-cta svg {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+.hero-cta:hover svg { transform: translateX(4px); }
+.hero-glow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,180,216,0.12) 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  animation: pulse-glow 6s ease-in-out infinite;
+}
+@keyframes pulse-glow {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+  50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.8; }
+}
+
+/* Sections */
+section { padding: 7rem 2rem; position: relative; }
+.section-dark { background: var(--navy); }
+.section-darker {
+  background: linear-gradient(180deg, var(--navy-light) 0%, var(--navy) 100%);
+}
+.section-gradient {
+  background: linear-gradient(180deg, var(--navy) 0%, var(--navy-light) 50%, var(--navy) 100%);
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.section-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--teal);
+  margin-bottom: 1rem;
+}
+.section-title {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.2rem;
+  line-height: 1.15;
+}
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--gray-300);
+  max-width: 600px;
+  line-height: 1.7;
+}
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.section-header .section-subtitle { margin: 0 auto; }
+
+/* Pain Point Cards */
+.pain-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+.pain-card {
+  position: relative;
+  padding: 2.5rem;
+  border-radius: 20px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+.pain-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--teal));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.pain-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255,183,3,0.3);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+.pain-card:hover::before { opacity: 1; }
+.pain-stat {
+  font-size: 3rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--gold) 0%, #ffd166 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+.pain-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--white);
+}
+.pain-card p {
+  color: var(--gray-300);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Steps */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  position: relative;
+}
+.step-card {
+  position: relative;
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(0,180,216,0.05) 0%, rgba(255,183,3,0.03) 100%);
+  border: 1px solid var(--glass-border);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.step-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(0,180,216,0.3);
+  box-shadow: 0 20px 60px rgba(0,180,216,0.1);
+}
+.step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
+  color: var(--navy);
+  font-weight: 800;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+.step-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+.step-card p {
+  color: var(--gray-300);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+/* Licensing */
+.license-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+.license-card {
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  text-align: center;
+}
+.license-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(0,180,216,0.4);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+.license-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 1.5rem;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(0,180,216,0.15), rgba(255,183,3,0.1));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.license-icon svg { width: 28px; height: 28px; color: var(--teal); }
+.license-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+.license-card p {
+  color: var(--gray-300);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+.license-note {
+  text-align: center;
+  color: var(--gray-400);
+  font-size: 0.95rem;
+  font-style: italic;
+  margin-top: 1rem;
+}
+
+/* ROI */
+.roi-section {
+  background: linear-gradient(135deg, var(--navy-light) 0%, var(--navy-mid) 100%);
+  border-radius: 24px;
+  padding: 4rem 3rem;
+  border: 1px solid var(--glass-border);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.roi-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(ellipse at center, rgba(0,180,216,0.04) 0%, transparent 50%);
+  animation: roi-bg-rotate 20s linear infinite;
+}
+@keyframes roi-bg-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.roi-stat {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--gold) 0%, #ffd166 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+.roi-text {
+  font-size: 1.15rem;
+  color: var(--gray-200);
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+  position: relative;
+  z-index: 1;
+}
+.roi-detail {
+  font-size: 0.95rem;
+  color: var(--gray-300);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+  position: relative;
+  z-index: 1;
+  padding-top: 2rem;
+  border-top: 1px solid var(--glass-border);
+}
+
+/* Security */
+.security-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+.security-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-radius: 16px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  transition: all 0.3s ease;
+}
+.security-item:hover {
+  border-color: rgba(0,180,216,0.3);
+  transform: translateY(-3px);
+}
+.security-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(0,180,216,0.15), rgba(0,180,216,0.05));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.security-icon svg { width: 22px; height: 22px; color: var(--teal); }
+.security-item h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+.security-item p {
+  font-size: 0.85rem;
+  color: var(--gray-400);
+  line-height: 1.5;
+}
+
+/* Form */
+.form-section {
+  background: linear-gradient(180deg, var(--navy) 0%, var(--navy-light) 100%);
+}
+.form-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 3rem;
+  border-radius: 24px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+.form-group.full-width { grid-column: 1 / -1; }
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--gray-200);
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.05);
+  color: var(--white);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  outline: none;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--gray-400);
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(0,180,216,0.15);
+}
+.form-group select option {
+  background: var(--navy);
+  color: var(--white);
+}
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+.form-submit {
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
+  color: var(--navy);
+  font-family: 'Inter', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 20px rgba(0,180,216,0.2);
+}
+.form-submit:hover {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(255,183,3,0.3);
+}
+
+/* Footer */
+.footer {
+  background: var(--navy-light);
+  border-top: 1px solid var(--glass-border);
+  padding: 3rem 2rem 2rem;
+}
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+.footer-logo {
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+.footer-logo span { color: var(--teal); }
+.footer-info {
+  color: var(--gray-400);
+  font-size: 0.85rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+.footer-disclaimer {
+  color: var(--gray-400);
+  font-size: 0.75rem;
+  line-height: 1.6;
+  border-top: 1px solid var(--glass-border);
+  padding-top: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Floating Particles */
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+.particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: var(--teal);
+  border-radius: 50%;
+  opacity: 0;
+  animation: float-particle 8s ease-in-out infinite;
+}
+@keyframes float-particle {
+  0% { opacity: 0; transform: translateY(100vh) scale(0); }
+  20% { opacity: 0.6; }
+  80% { opacity: 0.3; }
+  100% { opacity: 0; transform: translateY(-10vh) scale(1); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  section { padding: 4rem 1.25rem; }
+  .form-grid { grid-template-columns: 1fr; }
+  .form-container { padding: 2rem 1.5rem; }
+  .roi-section { padding: 3rem 1.5rem; }
+  .pain-grid, .steps-grid, .license-grid, .security-grid {
+    grid-template-columns: 1fr;
+  }
+  .nav { padding: 0.8rem 1rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Ayass<span>Bio</span> | BiRAGAS</a>
+    <a href="#demo-form" class="nav-cta">Request Demo</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <svg class="hero-bg-svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+    <!-- DNA Helix / Network SVG -->
+    <defs>
+      <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#00B4D8;stop-opacity:0.4"/>
+        <stop offset="100%" style="stop-color:#FFB703;stop-opacity:0.1"/>
+      </linearGradient>
+    </defs>
+    <g class="helix-group" fill="none" stroke="url(#grad1)" stroke-width="1">
+      <path d="M0,450 Q360,300 720,450 T1440,450" opacity="0.3">
+        <animate attributeName="d" dur="8s" repeatCount="indefinite"
+          values="M0,450 Q360,300 720,450 T1440,450;M0,450 Q360,600 720,450 T1440,450;M0,450 Q360,300 720,450 T1440,450"/>
+      </path>
+      <path d="M0,450 Q360,600 720,450 T1440,450" opacity="0.3">
+        <animate attributeName="d" dur="8s" repeatCount="indefinite"
+          values="M0,450 Q360,600 720,450 T1440,450;M0,450 Q360,300 720,450 T1440,450;M0,450 Q360,600 720,450 T1440,450"/>
+      </path>
+    </g>
+    <!-- Network nodes -->
+    <g fill="#00B4D8" opacity="0.2">
+      <circle cx="200" cy="200" r="2"><animate attributeName="opacity" dur="4s" values="0.1;0.4;0.1" repeatCount="indefinite"/></circle>
+      <circle cx="500" cy="350" r="3"><animate attributeName="opacity" dur="5s" values="0.2;0.5;0.2" repeatCount="indefinite"/></circle>
+      <circle cx="800" cy="180" r="2"><animate attributeName="opacity" dur="3s" values="0.1;0.3;0.1" repeatCount="indefinite"/></circle>
+      <circle cx="1100" cy="400" r="3"><animate attributeName="opacity" dur="6s" values="0.15;0.45;0.15" repeatCount="indefinite"/></circle>
+      <circle cx="350" cy="600" r="2"><animate attributeName="opacity" dur="4.5s" values="0.1;0.35;0.1" repeatCount="indefinite"/></circle>
+      <circle cx="950" cy="650" r="2"><animate attributeName="opacity" dur="5.5s" values="0.15;0.4;0.15" repeatCount="indefinite"/></circle>
+      <circle cx="1300" cy="250" r="2"><animate attributeName="opacity" dur="3.5s" values="0.1;0.3;0.1" repeatCount="indefinite"/></circle>
+    </g>
+    <g stroke="#00B4D8" stroke-width="0.5" opacity="0.1">
+      <line x1="200" y1="200" x2="500" y2="350"/>
+      <line x1="500" y1="350" x2="800" y2="180"/>
+      <line x1="800" y1="180" x2="1100" y2="400"/>
+      <line x1="350" y1="600" x2="500" y2="350"/>
+      <line x1="950" y1="650" x2="1100" y2="400"/>
+      <line x1="1100" y1="400" x2="1300" y2="250"/>
+      <line x1="800" y1="180" x2="950" y2="650"/>
+    </g>
+  </svg>
+
+  <div class="particles">
+    <div class="particle" style="left:10%;animation-delay:0s;animation-duration:7s"></div>
+    <div class="particle" style="left:25%;animation-delay:1s;animation-duration:9s"></div>
+    <div class="particle" style="left:40%;animation-delay:2s;animation-duration:6s"></div>
+    <div class="particle" style="left:55%;animation-delay:0.5s;animation-duration:8s"></div>
+    <div class="particle" style="left:70%;animation-delay:3s;animation-duration:7s"></div>
+    <div class="particle" style="left:85%;animation-delay:1.5s;animation-duration:10s"></div>
+    <div class="particle" style="left:95%;animation-delay:2.5s;animation-duration:6.5s"></div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-badge">Enterprise Drug Discovery Platform</div>
+    <h1>Reduce Late-Stage Attrition with <em>Causally Validated Targets</em></h1>
+    <p>BiRAGAS integrates into your early discovery pipeline &mdash; replacing correlational biomarkers with Mendelian Randomization-validated causal drivers.</p>
+    <a href="#demo-form" class="hero-cta">
+      Request Enterprise Demo
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- Pain Points -->
+<section class="section-darker">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">The Problem</span>
+      <h2 class="section-title">The Drug Discovery Pipeline is Broken</h2>
+      <p class="section-subtitle">Correlational targets are the root cause of pharmaceutical R&D's most expensive failures.</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card reveal reveal-delay-1">
+        <div class="pain-stat">90%</div>
+        <h3>Attrition Rate</h3>
+        <p>Most candidates fail because correlational targets don't replicate in human biology. Association is not causation.</p>
+      </div>
+      <div class="pain-card reveal reveal-delay-2">
+        <div class="pain-stat">$2.6B</div>
+        <h3>Per Drug Cost</h3>
+        <p>Late-stage failures are the most expensive failures. Each Phase III failure costs hundreds of millions.</p>
+      </div>
+      <div class="pain-card reveal reveal-delay-3">
+        <div class="pain-stat">5-10 Yrs</div>
+        <h3>Wasted Time</h3>
+        <p>Restarting from correlational scratch wastes years of research effort and delays treatments reaching patients.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works -->
+<section class="section-gradient">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Our Solution</span>
+      <h2 class="section-title">How BiRAGAS De-Risks Your Pipeline</h2>
+      <p class="section-subtitle">A 7-phase causal inference engine that replaces guesswork with mechanistic certainty.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card reveal reveal-delay-1">
+        <div class="step-number">1</div>
+        <h3>Causal Target Identification</h3>
+        <p>7-phase pipeline identifies targets with causal evidence, not just statistical association. Mendelian Randomization separates signal from noise.</p>
+      </div>
+      <div class="step-card reveal reveal-delay-2">
+        <div class="step-number">2</div>
+        <h3>In-Silico Validation</h3>
+        <p>Pearl's do-calculus simulates interventions before wet-lab commitment. Test your hypothesis computationally before spending millions.</p>
+      </div>
+      <div class="step-card reveal reveal-delay-3">
+        <div class="step-number">3</div>
+        <h3>Resistance Prediction</h3>
+        <p>Identifies bypass pathways and compensatory mechanisms upfront, so you can design combination strategies from day one.</p>
+      </div>
+      <div class="step-card reveal reveal-delay-4">
+        <div class="step-number">4</div>
+        <h3>Regulatory Evidence Packages</h3>
+        <p>Generates FDA/EMA-ready mechanistic evidence dossiers with full causal provenance and audit trails.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Licensing -->
+<section class="section-darker">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Licensing</span>
+      <h2 class="section-title">Licensing Options for Pharma</h2>
+      <p class="section-subtitle">Flexible modules that scale with your pipeline needs.</p>
+    </div>
+    <div class="license-grid">
+      <div class="license-card reveal reveal-delay-1">
+        <div class="license-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <h3>Causal Engine</h3>
+        <p>Core 7-phase causal inference pipeline with Mendelian Randomization, SCM construction, and do-calculus intervention simulation.</p>
+      </div>
+      <div class="license-card reveal reveal-delay-2">
+        <div class="license-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>Drug Agent</h3>
+        <p>AI-powered drug discovery agent for target prioritization, resistance prediction, and combination therapy design.</p>
+      </div>
+      <div class="license-card reveal reveal-delay-3">
+        <div class="license-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <h3>CRISPR Suite</h3>
+        <p>Causal guide RNA design with off-target prediction, essentiality scoring, and synthetic lethality mapping.</p>
+      </div>
+      <div class="license-card reveal reveal-delay-4">
+        <div class="license-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <h3>Full Platform</h3>
+        <p>Complete BiRAGAS platform including all modules, dedicated support, custom model training, and API access.</p>
+      </div>
+    </div>
+    <p class="license-note reveal">Custom configuration for your therapeutic focus and pipeline stage.</p>
+  </div>
+</section>
+
+<!-- ROI -->
+<section class="section-gradient">
+  <div class="container reveal">
+    <div class="roi-section">
+      <span class="section-label">Return on Investment</span>
+      <div class="roi-stat">$100M+ Saved</div>
+      <p class="roi-text">Every 1% improvement in Phase II success rate saves an estimated $100M+ in downstream development costs.</p>
+      <p class="roi-detail">BiRAGAS targets are causally validated through 5 MR methods, 4 sensitivity analyses, and 5-category hallucination detection &mdash; giving you the highest-confidence targets in the industry.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Enterprise Security -->
+<section class="section-darker">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Security & Compliance</span>
+      <h2 class="section-title">Enterprise-Grade Security</h2>
+      <p class="section-subtitle">Built for the most regulated industry on earth.</p>
+    </div>
+    <div class="security-grid">
+      <div class="security-item reveal reveal-delay-1">
+        <div class="security-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div>
+          <h4>Programme-Specific Data Isolation</h4>
+          <p>Each programme operates in its own isolated environment with dedicated compute and storage.</p>
+        </div>
+      </div>
+      <div class="security-item reveal reveal-delay-2">
+        <div class="security-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+        </div>
+        <div>
+          <h4>No Patient Data Leaves Your Infrastructure</h4>
+          <p>On-premise and private cloud deployment options ensure full data sovereignty.</p>
+        </div>
+      </div>
+      <div class="security-item reveal reveal-delay-3">
+        <div class="security-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6M23 11h-6"/></svg>
+        </div>
+        <div>
+          <h4>IP Flexibility</h4>
+          <p>Co-development and shared IP models tailored to your organizational requirements.</p>
+        </div>
+      </div>
+      <div class="security-item reveal reveal-delay-4">
+        <div class="security-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <div>
+          <h4>Publication-Ready Outputs</h4>
+          <p>All analyses generate publication-quality figures, tables, and mechanistic narratives.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lead Form -->
+<section class="form-section" id="demo-form">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Get Started</span>
+      <h2 class="section-title">Request Enterprise Demo</h2>
+      <p class="section-subtitle">See how BiRAGAS can de-risk your drug discovery pipeline with causally validated targets.</p>
+    </div>
+    <div class="form-container reveal">
+      <form onsubmit="event.preventDefault(); this.querySelector('.form-submit').textContent='Submitted! We\'ll be in touch.'; this.querySelector('.form-submit').style.background='linear-gradient(135deg, #22c55e, #16a34a)';">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" placeholder="Jane Smith" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Work Email *</label>
+            <input type="email" id="email" name="email" placeholder="jane@pharma.com" required>
+          </div>
+          <div class="form-group">
+            <label for="company">Company *</label>
+            <input type="text" id="company" name="company" placeholder="Pharma Corp" required>
+          </div>
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" placeholder="VP of Discovery">
+          </div>
+          <div class="form-group">
+            <label for="pipeline">Pipeline Stage</label>
+            <select id="pipeline" name="pipeline">
+              <option value="" disabled selected>Select stage</option>
+              <option value="target-id">Target Identification</option>
+              <option value="lead-opt">Lead Optimization</option>
+              <option value="preclinical">Preclinical</option>
+              <option value="clinical">Clinical</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="therapeutic">Therapeutic Area</label>
+            <input type="text" id="therapeutic" name="therapeutic" placeholder="e.g. Oncology, Immunology">
+          </div>
+          <div class="form-group full-width">
+            <label for="programs">Number of Active Programs</label>
+            <input type="text" id="programs" name="programs" placeholder="e.g. 5-10">
+          </div>
+          <div class="form-group full-width">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell us about your discovery challenges..."></textarea>
+          </div>
+        </div>
+        <button type="submit" class="form-submit">Request Demo</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo">Ayass<span>Bio</span></div>
+    <div class="footer-info">
+      Ayass Bioscience, LLC<br>
+      7480 Warren Parkway, Suite 100 &bull; Frisco, TX 75034<br>
+      Phone: (469) 365-6420
+    </div>
+    <div class="footer-disclaimer">
+      &copy; 2026 Ayass Bioscience, LLC. All rights reserved. BiRAGAS is a proprietary platform of Ayass Bioscience.
+      The information on this page is intended for research and business development purposes only.
+      It does not constitute medical advice, diagnosis, or treatment recommendations.
+    </div>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Nav scroll effect
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>
+</body>
+</html>

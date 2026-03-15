@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Storyboard: The $2.6 Billion Question | Ayass Bioscience</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0A1628;
+  --teal: #00B4D8;
+  --white: #FFFFFF;
+  --gold: #FFB703;
+  --red: #E63946;
+  --green: #2A9D8F;
+  --gray-100: #F8F9FA;
+  --gray-200: #E9ECEF;
+  --gray-300: #DEE2E6;
+  --gray-500: #6C757D;
+  --gray-700: #495057;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--gray-100);
+  color: var(--navy);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+/* Cover Section */
+.cover {
+  background: linear-gradient(135deg, var(--navy) 0%, #1a2a4a 100%);
+  border-radius: 16px;
+  padding: 60px 48px;
+  color: var(--white);
+  margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cover::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(0,180,216,0.15) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.cover::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255,183,3,0.1) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.cover-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 16px;
+}
+
+.cover h1 {
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+
+.cover h1 span {
+  color: var(--gold);
+}
+
+.cover .subtitle {
+  font-size: 20px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 32px;
+}
+
+.cover-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.meta-item {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.meta-item .label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 4px;
+}
+
+.meta-item .value {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* Production Notes */
+.production-notes {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 12px;
+  padding: 32px;
+  margin-bottom: 40px;
+}
+
+.production-notes h2 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.production-notes h2::before {
+  content: '';
+  width: 4px;
+  height: 20px;
+  background: var(--teal);
+  border-radius: 2px;
+}
+
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.note-card {
+  background: var(--gray-100);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.note-card .note-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  margin-bottom: 6px;
+}
+
+.note-card .note-value {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.color-swatches {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.swatch {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid var(--white);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+/* Timeline */
+.timeline-bar {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 12px;
+  padding: 24px 32px;
+  margin-bottom: 40px;
+}
+
+.timeline-bar h2 {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  margin-bottom: 16px;
+}
+
+.timeline-track {
+  display: flex;
+  height: 48px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--gray-200);
+}
+
+.timeline-segment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  position: relative;
+}
+
+.timeline-segment .seg-label {
+  position: absolute;
+  bottom: -22px;
+  font-size: 9px;
+  color: var(--gray-500);
+  white-space: nowrap;
+  text-shadow: none;
+}
+
+/* Frame Cards */
+.frames-section h2 {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 24px;
+}
+
+.frame-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 32px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  page-break-inside: avoid;
+}
+
+.frame-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background: var(--navy);
+  color: var(--white);
+}
+
+.frame-number {
+  font-size: 14px;
+  font-weight: 800;
+  background: var(--teal);
+  color: var(--navy);
+  padding: 4px 14px;
+  border-radius: 20px;
+}
+
+.frame-title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.frame-time {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gold);
+  background: rgba(255,183,3,0.15);
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.frame-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.frame-visual {
+  background: #0d1b2a;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.frame-details {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.detail-block {
+  border-left: 3px solid var(--gray-200);
+  padding-left: 14px;
+}
+
+.detail-block.vo { border-color: var(--teal); }
+.detail-block.onscreen { border-color: var(--gold); }
+.detail-block.visual-desc { border-color: var(--green); }
+.detail-block.transition { border-color: var(--red); }
+.detail-block.music { border-color: var(--gray-500); }
+
+.detail-label {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.detail-block.vo .detail-label { color: var(--teal); }
+.detail-block.onscreen .detail-label { color: var(--gold); }
+.detail-block.visual-desc .detail-label { color: var(--green); }
+.detail-block.transition .detail-label { color: var(--red); }
+.detail-block.music .detail-label { color: var(--gray-500); }
+
+.detail-text {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--gray-700);
+}
+
+.detail-text em {
+  font-style: italic;
+  color: var(--gray-500);
+}
+
+/* Summary */
+.summary {
+  background: linear-gradient(135deg, var(--navy) 0%, #1a2a4a 100%);
+  border-radius: 16px;
+  padding: 48px;
+  color: var(--white);
+  margin-top: 40px;
+}
+
+.summary h2 {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 24px;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.key-messages h3, .cta-section h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--teal);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.key-messages ul {
+  list-style: none;
+  padding: 0;
+}
+
+.key-messages li {
+  padding: 8px 0;
+  padding-left: 20px;
+  position: relative;
+  font-size: 14px;
+  color: rgba(255,255,255,0.85);
+}
+
+.key-messages li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 14px;
+  width: 8px;
+  height: 8px;
+  background: var(--gold);
+  border-radius: 50%;
+}
+
+.cta-box {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+}
+
+.cta-box .cta-url {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--gold);
+  margin-top: 8px;
+}
+
+.cta-box .cta-action {
+  display: inline-block;
+  margin-top: 12px;
+  background: var(--teal);
+  color: var(--navy);
+  font-weight: 700;
+  padding: 10px 28px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+/* Visual Rough Styles */
+.vis-gold-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 56px;
+  font-weight: 900;
+  color: var(--gold);
+  text-align: center;
+  text-shadow: 0 0 40px rgba(255,183,3,0.4);
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { text-shadow: 0 0 40px rgba(255,183,3,0.4); }
+  50% { text-shadow: 0 0 80px rgba(255,183,3,0.7); }
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--gold);
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+.vis-red-stat {
+  font-family: 'Inter', sans-serif;
+  font-size: 72px;
+  font-weight: 900;
+  color: var(--red);
+  text-align: center;
+}
+
+.vis-red-sub {
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.6);
+  text-align: center;
+  margin-top: 8px;
+}
+
+.scatter-dot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: var(--red);
+  border-radius: 50%;
+  opacity: 0.4;
+}
+
+.split-screen {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  gap: 2px;
+}
+
+.split-left, .split-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.split-left {
+  background: rgba(230,57,70,0.1);
+  border-radius: 8px 0 0 8px;
+}
+
+.split-right {
+  background: rgba(0,180,216,0.1);
+  border-radius: 0 8px 8px 0;
+}
+
+.tangled-lines svg, .clean-arrows svg {
+  width: 100%;
+  max-width: 160px;
+}
+
+.split-label {
+  font-size: 11px;
+  font-weight: 700;
+  margin-top: 10px;
+  letter-spacing: 1px;
+}
+
+/* DAG Network Visual */
+.dag-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dag-container svg {
+  width: 100%;
+  max-width: 280px;
+}
+
+/* Pipeline Visual */
+.pipeline-visual {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.phase-node {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--navy);
+}
+
+.phase-arrow {
+  color: rgba(255,255,255,0.3);
+  font-size: 16px;
+}
+
+/* Dashboard Visual */
+.dashboard-mock {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 12px;
+  padding: 16px;
+  width: 100%;
+  max-width: 260px;
+}
+
+.dash-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  font-size: 11px;
+  color: rgba(255,255,255,0.7);
+}
+
+.dash-row .gene { font-weight: 600; color: var(--teal); }
+.dash-row .score { color: var(--gold); font-weight: 700; }
+.dash-bar {
+  height: 4px;
+  background: var(--teal);
+  border-radius: 2px;
+  margin-left: 8px;
+}
+
+.tagline-visual {
+  text-align: center;
+}
+
+.tagline-main {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.tagline-sub {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--teal);
+}
+
+.endcard-visual {
+  text-align: center;
+}
+
+.endcard-logo {
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.endcard-url {
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 16px;
+}
+
+.endcard-cta {
+  display: inline-block;
+  background: var(--teal);
+  color: var(--navy);
+  font-weight: 700;
+  font-size: 13px;
+  padding: 8px 24px;
+  border-radius: 6px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .frame-body { grid-template-columns: 1fr; }
+  .frame-visual { min-height: 240px; }
+  .cover h1 { font-size: 32px; }
+  .cover-meta { grid-template-columns: 1fr 1fr; }
+  .summary-grid { grid-template-columns: 1fr; }
+}
+
+/* Print Styles */
+@media print {
+  body { background: white; }
+  .container { padding: 0; max-width: 100%; }
+  .cover {
+    background: var(--navy) !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    border-radius: 0;
+    padding: 40px;
+  }
+  .frame-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    margin-bottom: 20px;
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+  .frame-header {
+    background: var(--navy) !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .frame-visual {
+    background: #0d1b2a !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    min-height: 240px;
+  }
+  .summary {
+    background: var(--navy) !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .timeline-track, .timeline-segment, .phase-node, .swatch {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- COVER -->
+  <section class="cover">
+    <div class="cover-label">Video Storyboard</div>
+    <h1>The <span>$2.6 Billion</span> Question</h1>
+    <div class="subtitle">30-Second Awareness Video &mdash; Ayass Bioscience / BiRAGAS Platform</div>
+    <div class="cover-meta">
+      <div class="meta-item">
+        <div class="label">Duration</div>
+        <div class="value">30 seconds</div>
+      </div>
+      <div class="meta-item">
+        <div class="label">Format</div>
+        <div class="value">MP4 / MOV</div>
+      </div>
+      <div class="meta-item">
+        <div class="label">Aspect Ratio</div>
+        <div class="value">16:9 (landscape)</div>
+      </div>
+      <div class="meta-item">
+        <div class="label">Target Audience</div>
+        <div class="value">Pharma Execs, VCs, Biotech Leaders</div>
+      </div>
+      <div class="meta-item">
+        <div class="label">Funnel Stage</div>
+        <div class="value">Top of Funnel &mdash; Awareness</div>
+      </div>
+      <div class="meta-item">
+        <div class="label">Platforms</div>
+        <div class="value">LinkedIn, YouTube, Website</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTION NOTES -->
+  <section class="production-notes">
+    <h2>Production Notes</h2>
+    <div class="notes-grid">
+      <div class="note-card">
+        <div class="note-label">Music Style</div>
+        <div class="note-value">Subtle, tense electronic pulse building to confident resolve. Think: Hans Zimmer meets biotech.</div>
+      </div>
+      <div class="note-card">
+        <div class="note-label">Pacing</div>
+        <div class="note-value">Fast-cut first 7s (problem), measured middle (solution), breathing room for tagline.</div>
+      </div>
+      <div class="note-card">
+        <div class="note-label">VO Style</div>
+        <div class="note-value">Authoritative, measured, confident. Male or female. Not salesy &mdash; scientific gravitas.</div>
+      </div>
+      <div class="note-card">
+        <div class="note-label">Animation Style</div>
+        <div class="note-value">Clean motion graphics. Particle effects. Geometric nodes and edges. No stock footage.</div>
+      </div>
+      <div class="note-card">
+        <div class="note-label">Color Palette</div>
+        <div class="note-value">
+          Primary palette:
+          <div class="color-swatches">
+            <div class="swatch" style="background:#0A1628;" title="Navy"></div>
+            <div class="swatch" style="background:#00B4D8;" title="Teal"></div>
+            <div class="swatch" style="background:#FFB703;" title="Gold"></div>
+            <div class="swatch" style="background:#FFFFFF;border-color:#ddd;" title="White"></div>
+            <div class="swatch" style="background:#E63946;" title="Red (accent)"></div>
+          </div>
+        </div>
+      </div>
+      <div class="note-card">
+        <div class="note-label">Typography</div>
+        <div class="note-value">Inter Bold/Black for headlines. Inter Regular for body. Monospace for data/stats.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="timeline-bar">
+    <h2>Video Timeline (30s)</h2>
+    <div class="timeline-track">
+      <div class="timeline-segment" style="flex:3;background:var(--navy);">0-3s</div>
+      <div class="timeline-segment" style="flex:2;background:var(--red);">3-5s</div>
+      <div class="timeline-segment" style="flex:2;background:#7B2D3B;">5-7s</div>
+      <div class="timeline-segment" style="flex:5;background:var(--teal);">7-12s</div>
+      <div class="timeline-segment" style="flex:6;background:#0891B2;">12-18s</div>
+      <div class="timeline-segment" style="flex:4;background:var(--green);">18-22s</div>
+      <div class="timeline-segment" style="flex:5;background:#1E3A5F;">22-27s</div>
+      <div class="timeline-segment" style="flex:3;background:var(--navy);">27-30s</div>
+    </div>
+  </section>
+
+  <!-- FRAMES -->
+  <section class="frames-section">
+    <h2>Frame-by-Frame Storyboard</h2>
+
+    <!-- FRAME 1 -->
+    <div class="frame-card">
+      <div class="frame-header">
+        <span class="frame-number">F1</span>
+        <span class="frame-title">The Hook</span>
+        <span class="frame-time">0:00 &ndash; 0:03</span>
+      </div>
+      <div class="frame-body">
+        <div class="frame-visual">
+          <div class="vis-gold-text">$2.6 Billion</div>
+          <div class="particle" style="top:20%;left:15%;"></div>
+          <div class="particle" style="top:35%;left:80%;width:3px;height:3px;"></div>
+          <div class="particle" style="top:70%;left:25%;width:5px;height:5px;opacity:0.4;"></div>
+          <div class="particle" style="top:15%;left:65%;width:3px;height:3px;opacity:0.8;"></div>
+          <div class="particle" style="top:80%;left:70%;"></div>
+          <div class="particle" style="top:55%;left:10%;width:5px;height:5px;opacity:0.3;"></div>
+          <div class="particle" style="top:45%;left:90%;width:2px;height:2px;"></div>
+        </div>
+        <div class="frame-details">
+          <div class="detail-block vo">
+            <div class="detail-label">Voiceover</div>
+            <div class="detail-text">"That's what it costs to bring one drug to market."</div>
+          </div>
+          <div class="detail-block onscreen">
+            <div class="detail-label">On-Screen Text</div>
+            <div class="detail-text">$2.6 Billion</div>
+          </div>
+          <div class="detail-block visual-desc">
+            <div class="detail-label">Visual Description</div>
+            <div class="detail-text">Black screen fading into large gold "$2.6 Billion" text that scales up with particles dispersing outward from the text.</div>
+          </div>
+          <div class="detail-block transition">
+            <div class="detail-label">Transition</div>
+            <div class="detail-text">Quick cut to Frame 2</div>
+          </div>
+          <div class="detail-block music">
+            <div class="detail-label">Music / SFX</div>
+            <div class="detail-text">Subtle, tense electronic pulse begins. Low rumble.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FRAME 2 -->
+    <div class="frame-card">
+      <div class="frame-header">
+        <span class="frame-number">F2</span>
+        <span class="frame-title">The Problem</span>
+        <span class="frame-time">0:03 &ndash; 0:05</span>
+      </div>
+      <div class="frame-body">
+        <div class="frame-visual" style="position:relative;">
+          <div>
+            <div class="vis-red-stat">90%</div>
+            <div class="vis-red-sub">fail in clinical trials</div>
+          </div>
+          <div class="scatter-dot" style="top:18%;left:12%;"></div>
+          <div class="scatter-dot" style="top:25%;left:78%;width:8px;height:8px;"></div>
+          <div class="scatter-dot" style="top:72%;left:20%;width:5px;height:5px;"></div>
+          <div class="scatter-dot" style="top:80%;left:85%;"></div>
+          <div class="scatter-dot" style="top:40%;left:88%;width:4px;height:4px;"></div>
+          <div class="scatter-dot" style="top:65%;left:60%;width:7px;height:7px;opacity:0.3;"></div>
+          <div class="scatter-dot" style="top:10%;left:50%;"></div>
+          <div class="scatter-dot" style="top:85%;left:45%;width:5px;height:5px;opacity:0.5;"></div>
+        </div>
+        <div class="frame-details">
+          <div class="detail-block vo">
+            <div class="detail-label">Voiceover</div>
+            <div class="detail-text">"And ninety percent of candidates fail&mdash;"</div>
+          </div>
+          <div class="detail-block onscreen">
+            <div class="detail-label">On-Screen Text</div>
+            <div class="detail-text">90% fail in clinical trials</div>
+          </div>
+          <div class="detail-block visual-desc">
+            <div class="detail-label">Visual Description</div>
+            <div class="detail-text">Red "90%" fills the screen, then breaks apart into scattered dots flying outward. Dramatic, impactful moment.</div>
+          </div>
+          <div class="detail-block transition">
+            <div class="detail-label">Transition</div>
+            <div class="detail-text">Shatter / dissolve effect &mdash; dots scatter and reform into Frame 3</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FRAME 3 -->
+    <div class="frame-card">
+      <div class="frame-header">
+        <span class="frame-number">F3</span>
+        <span class="frame-title">The Why</span>
+        <span class="frame-time">0:05 &ndash; 0:07</span>
+      </div>
+      <div class="frame-body">
+        <div class="frame-visual">
+          <div class="split-screen">
+            <div class="split-left">
+              <div class="tangled-lines">
+                <svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+                  <line x1="10" y1="20" x2="90" y2="80" stroke="#E63946" stroke-width="2" opacity="0.6"/>
+                  <line x1="20" y1="80" x2="100" y2="30" stroke="#888" stroke-width="1.5" opacity="0.5"/>
+                  <line x1="50" y1="10" x2="60" y2="90" stroke="#E63946" stroke-width="2" opacity="0.7"/>
+                  <line x1="10" y1="50" x2="110" y2="50" stroke="#888" stroke-width="1.5" opacity="0.4"/>
+                  <line x1="30" y1="15" x2="80" y2="85" stroke="#E63946" stroke-width="1.5" opacity="0.5"/>
+                  <line x1="70" y1="10" x2="40" y2="95" stroke="#888" stroke-width="2" opacity="0.6"/>
+                  <line x1="15" y1="70" x2="105" y2="20" stroke="#E63946" stroke-width="1.5" opacity="0.4"/>
+                  <line x1="5" y1="35" x2="115" y2="65" stroke="#888" stroke-width="1" opacity="0.5"/>
+                </svg>
+              </div>
+              <div class="split-label" style="color:var(--red);">CORRELATION</div>
+            </div>
+            <div class="split-right">
+              <div class="clean-arrows">
+                <svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <marker id="arrowT" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                      <polygon points="0 0, 8 3, 0 6" fill="#00B4D8"/>
+                    </marker>
+                  </defs>
+                  <circle cx="60" cy="15" r="8" fill="#00B4D8" opacity="0.8"/>
+                  <circle cx="35" cy="50" r="8" fill="#00B4D8" opacity="0.8"/>
+                  <circle cx="85" cy="50" r="8" fill="#00B4D8" opacity="0.8"/>
+                  <circle cx="60" cy="85" r="8" fill="#00B4D8" opacity="0.8"/>
+                  <line x1="55" y1="22" x2="40" y2="43" stroke="#00B4D8" stroke-width="2" marker-end="url(#arrowT)"/>
+                  <line x1="65" y1="22" x2="80" y2="43" stroke="#00B4D8" stroke-width="2" marker-end="url(#arrowT)"/>
+                  <line x1="42" y1="56" x2="54" y2="78" stroke="#00B4D8" stroke-width="2" marker-end="url(#arrowT)"/>
+                  <line x1="78" y1="56" x2="66" y2="78" stroke="#00B4D8" stroke-width="2" marker-end="url(#arrowT)"/>
+                </svg>
+              </div>
+              <div class="split-label" style="color:var(--teal);">CAUSATION</div>
+            </div>
+          </div>
+        </div>
+        <div class="frame-details">
+          <div class="detail-block vo">
+            <div class="detail-label">Voiceover</div>
+            <div class="detail-text">"&mdash;because they were built on correlations, not causes."</div>
+          </div>
+          <div class="detail-block onscreen">
+            <div class="detail-label">On-Screen Text</div>
+            <div class="detail-text">Correlation &ne; Causation</div>
+          </div>
+          <div class="detail-block visual-desc">
+            <div class="detail-label">Visual Description</div>
+            <div class="detail-text">Split screen &mdash; left side shows tangled correlation lines (red/gray), right side shows clean causal arrows (teal). Clear visual contrast.</div>
+          </div>
+          <div class="detail-block transition">
+            <div class="detail-label">Transition</div>
+            <div class="detail-text">Left side fades out, right side expands to fill screen</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FRAME 4 -->
+    <div class="frame-card">
+      <div class="frame-header">
+        <span class="frame-number">F4</span>
+        <span class="frame-title">BiRAGAS Introduction</span>
+        <span class="frame-time">0:07 &ndash; 0:12</span>
+      </div>
+      <div class="frame-body">
+        <div class="frame-visual">
+          <div class="dag-container">
+            <svg viewBox="0 0 280 260" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <marker id="arrowD" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                  <polygon points="0 0, 8 3, 0 6" fill="rgba(255,255,255,0.4)"/>
+                </marker>
+              </defs>
+              <!-- Layer 1: SNPs (Gold) -->
+              <circle cx="80" cy="30" r="12" fill="#FFB703" opacity="0.9"/>
+              <circle cx="140" cy="30" r="12" fill="#FFB703" opacity="0.9"/>
+              <circle cx="200" cy="30" r="12" fill="#FFB703" opacity="0.9"/>
+              <text x="80" y="34" text-anchor="middle" fill="#0A1628" font-size="8" font-weight="700">SNP</text>
+              <text x="140" y="34" text-anchor="middle" fill="#0A1628" font-size="8" font-weight="700">SNP</text>
+              <text x="200" y="34" text-anchor="middle" fill="#0A1628" font-size="8" font-weight="700">SNP</text>
+              <!-- Layer 2: Genes (Teal) -->
+              <circle cx="110" cy="100" r="14" fill="#00B4D8" opacity="0.9"/>
+              <circle cx="170" cy="100" r="14" fill="#00B4D8" opacity="0.9"/>
+              <text x="110" y="104" text-anchor="middle" fill="#0A1628" font-size="8" font-weight="700">Gene</text>
+              <text x="170" y="104" text-anchor="middle" fill="#0A1628" font-size="8" font-weight="700">Gene</text>
+              <!-- Layer 3: Pathways (Green) -->
+              <circle cx="100" cy="170" r="14" fill="#2A9D8F" opacity="0.9"/>
+              <circle cx="180" cy="170" r="14" fill="#2A9D8F" opacity="0.9"/>
+              <text x="100" y="174" text-anchor="middle" fill="#fff" font-size="7" font-weight="700">Path</text>
+              <text x="180" y="174" text-anchor="middle" fill="#fff" font-size="7" font-weight="700">Path</text>
+              <!-- Layer 4: Disease (White) -->
+              <circle cx="140" cy="235" r="16" fill="#FFFFFF" opacity="0.95"/>
+              <text x="140" y="239" text-anchor="middle" fill="#0A1628" font-size="7" font-weight="800">Disease</text>
+              <!-- Edges -->
+              <line x1="80" y1="42" x2="110" y2="86" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" marker-end="url(#arrowD)"/>
+              <line x1="140" y1="42" x2="110" y2="86" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" marker-end="url(#arrowD)"/>
+              <line x1="140" y1="42" x2="170" y2="86" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" marker-end="url(#arrowD)"/>
+              <line x1="200" y1="42" x2="170" y2="86" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" marker-end="url(#arrowD)"/>
+              <line x1="110" y1="114" x2="100" y2="156" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" marker-end="url(#arrowD)"/>
+              <line x1="170" y1="114" x2="180" y2="156" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" marker-end="url(#arrowD)"/>
+              <line x1="110" y1="114" x2="180" y2="156" stroke="rgba(255,255,255,0.2)" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arrowD)"/>
+              <line x1="100" y1="184" x2="140" y2="219" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" marker-end="url(#arrowD)"/>
+              <line x1="180" y1="184" x2="140" y2="219" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" marker-end="url(#arrowD)"/>
+              <!-- Labels -->
+              <text x="20" y="34" fill="#FFB703" font-size="9" font-weight="600" opacity="0.7">SNPs</text>
+              <text x="20" y="104" fill="#00B4D8" font-size="9" font-weight="600" opacity="0.7">Genes</text>
+              <text x="20" y="174" fill="#2A9D8F" font-size="9" font-weight="600" opacity="0.7">Paths</text>
+              <text x="20" y="239" fill="#FFFFFF" font-size="9" font-weight="600" opacity="0.7">Disease</text>
+            </svg>
+          </div>
+        </div>
+        <div class="frame-details">
+          <div class="detail-block vo">
+            <div class="detail-label">Voiceover</div>
+            <div class="detail-text">"BiRAGAS changes everything. The first AI platform that builds patient-level causal graphs from multi-omics data."</div>
+          </div>
+          <div class="detail-block onscreen">
+            <div class="detail-label">On-Screen Text</div>
+            <div class="detail-text"><strong>BiRAGAS</strong> (large) / "Causal AI for Drug Discovery" (smaller)</div>
+          </div>
+          <div class="detail-block visual-desc">
+            <div class="detail-label">Visual Description</div>
+            <div class="detail-text">Animated DAG network forming &mdash; nodes appearing one by one across 4 layers: gold SNPs (top) &rarr; teal genes &rarr; green pathways &rarr; white disease node (bottom). Edges draw between them with flowing pulse animations.</div>
+          </div>
+          <div class="detail-block transition">
+            <div class="detail-label">Transition</div>
+            <div class="detail-text">Smooth zoom into the network center</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FRAME 5 -->
+    <div class="frame-card">
+      <div class="frame-header">
+        <span class="frame-number">F5</span>
+        <span class="frame-title">The Pipeline</span>
+        <span class="frame-time">0:12 &ndash; 0:18</span>
+      </div>
+      <div class="frame-body">
+        <div class="frame-visual">
+          <div style="text-align:center;">
+            <div class="pipeline-visual">
+              <div class="phase-node" style="background:var(--gold);">1</div>
+              <span class="phase-arrow">&rarr;</span>
+              <div class="phase-node" style="background:var(--teal);">2</div>
+              <span class="phase-arrow">&rarr;</span>
+              <div class="phase-node" style="background:#2A9D8F;">3</div>
+              <span class="phase-arrow">&rarr;</span>
+              <div class="phase-node" style="background:var(--teal);">4</div>
+              <span class="phase-arrow">&rarr;</span>
+              <div class="phase-node" style="background:#0891B2;">5</div>
+              <span class="phase-arrow">&rarr;</span>
+              <div class="phase-node" style="background:var(--gold);">6</div>
+              <span class="phase-arrow">&rarr;</span>
+              <div class="phase-node" style="background:var(--white);">7</div>
+            </div>
+            <div style="margin-top:20px;color:rgba(255,255,255,0.5);font-size:12px;font-weight:600;letter-spacing:2px;">7 PHASES &bull; 23 MODULES</div>
+          </div>
+        </div>
+        <div class="frame-details">
+          <div class="detail-block vo">
+            <div class="detail-label">Voiceover</div>
+            <div class="detail-text">"Seven phases. Twenty-three modules."</div>
+          </div>
+          <div class="detail-block onscreen">
+            <div class="detail-label">On-Screen Text</div>
+            <div class="detail-text">7 Phases &bull; 23 Modules</div>
+          </div>
+          <div class="detail-block visual-desc">
+            <div class="detail-label">Visual Description</div>
+            <div class="detail-text">Horizontal pipeline with 7 connected phases appearing sequentially (Phase 1 &rarr; 7). Each phase lights up as mentioned. Colored circles with phase numbers connected by arrows.</div>
+          </div>
+          <div class="detail-block transition">
+            <div class="detail-label">Transition</div>
+            <div class="detail-text">Each phase illuminates in sequence, left to right</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FRAME 6 -->
+    <div class="frame-card">
+      <div class="frame-header">
+        <span class="frame-number">F6</span>
+        <span class="frame-title">The Output</span>
+        <span class="frame-time">0:18 &ndash; 0:22</span>
+      </div>
+      <div class="frame-body">
+        <div class="frame-visual">
+          <div class="dashboard-mock">
+            <div style="font-size:11px;font-weight:700;color:var(--gold);margin-bottom:12px;letter-spacing:1px;">VALIDATED TARGETS</div>
+            <div class="dash-row">
+              <span class="gene">BRCA1</span>
+              <span class="score">0.94</span>
+              <div class="dash-bar" style="width:70px;"></div>
+            </div>
+            <div class="dash-row">
+              <span class="gene">TP53</span>
+              <span class="score">0.91</span>
+              <div class="dash-bar" style="width:65px;"></div>
+            </div>
+            <div class="dash-row">
+              <span class="gene">EGFR</span>
+              <span class="score">0.87</span>
+              <div class="dash-bar" style="width:58px;"></div>
+            </div>
+            <div class="dash-row">
+              <span class="gene">KRAS</span>
+              <span class="score">0.83</span>
+              <div class="dash-bar" style="width:52px;"></div>
+            </div>
+            <div class="dash-row" style="border:none;">
+              <span class="gene">PIK3CA</span>
+              <span class="score">0.79</span>
+              <div class="dash-bar" style="width:46px;"></div>
+            </div>
+            <div style="margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,0.1);text-align:center;">
+              <span style="font-size:9px;color:rgba(255,255,255,0.4);letter-spacing:1px;">FROM RAW DATA &rarr; VALIDATED DRUG TARGETS</span>
+            </div>
+          </div>
+        </div>
+        <div class="frame-details">
+          <div class="detail-block vo">
+            <div class="detail-label">Voiceover</div>
+            <div class="detail-text">"From raw data to validated drug targets &mdash; with every causal claim fully auditable."</div>
+          </div>
+          <div class="detail-block onscreen">
+            <div class="detail-label">On-Screen Text</div>
+            <div class="detail-text">From Raw Data &rarr; Validated Drug Targets</div>
+          </div>
+          <div class="detail-block visual-desc">
+            <div class="detail-label">Visual Description</div>
+            <div class="detail-text">The pipeline compresses and a glowing "validated targets" dashboard appears &mdash; showing ranked gene list, confidence scores, and causal graph summary.</div>
+          </div>
+          <div class="detail-block transition">
+            <div class="detail-label">Transition</div>
+            <div class="detail-text">Zoom out reveal &mdash; dashboard emerges from compressed pipeline</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FRAME 7 -->
+    <div class="frame-card">
+      <div class="frame-header">
+        <span class="frame-number">F7</span>
+        <span class="frame-title">The Tagline</span>
+        <span class="frame-time">0:22 &ndash; 0:27</span>
+      </div>
+      <div class="frame-body">
+        <div class="frame-visual">
+          <div class="tagline-visual">
+            <div class="tagline-main">Causality, Not Correlation.</div>
+            <div class="tagline-sub">That's Intelligent Biology in Motion.</div>
+          </div>
+        </div>
+        <div class="frame-details">
+          <div class="detail-block vo">
+            <div class="detail-label">Voiceover</div>
+            <div class="detail-text">"Causality, not correlation. That's intelligent biology in motion."</div>
+          </div>
+          <div class="detail-block onscreen">
+            <div class="detail-label">On-Screen Text</div>
+            <div class="detail-text">"Causality, Not Correlation." (large, white) / "That's Intelligent Biology in Motion." (teal, below)</div>
+          </div>
+          <div class="detail-block visual-desc">
+            <div class="detail-label">Visual Description</div>
+            <div class="detail-text">Clean navy background. Main tagline appears in large white text with elegant type-on animation. Subtitle fades in below in teal.</div>
+          </div>
+          <div class="detail-block transition">
+            <div class="detail-label">Transition</div>
+            <div class="detail-text">Elegant fade &mdash; text breathes for a moment</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FRAME 8 -->
+    <div class="frame-card">
+      <div class="frame-header">
+        <span class="frame-number">F8</span>
+        <span class="frame-title">End Card</span>
+        <span class="frame-time">0:27 &ndash; 0:30</span>
+      </div>
+      <div class="frame-body">
+        <div class="frame-visual">
+          <div class="endcard-visual">
+            <div class="endcard-logo">AYASS BIOSCIENCE</div>
+            <div class="endcard-url">ayassbioscience.com</div>
+            <div class="endcard-cta">Learn More</div>
+          </div>
+        </div>
+        <div class="frame-details">
+          <div class="detail-block vo">
+            <div class="detail-label">Voiceover</div>
+            <div class="detail-text"><em>None &mdash; music resolve</em></div>
+          </div>
+          <div class="detail-block onscreen">
+            <div class="detail-label">On-Screen Text</div>
+            <div class="detail-text">"AYASS BIOSCIENCE" / "ayassbioscience.com" / "Learn More" CTA button</div>
+          </div>
+          <div class="detail-block visual-desc">
+            <div class="detail-label">Visual Description</div>
+            <div class="detail-text">Ayass Bioscience logo centered on navy background. Website URL below. "Learn More" CTA button style element. Clean, professional close.</div>
+          </div>
+          <div class="detail-block transition">
+            <div class="detail-label">Transition</div>
+            <div class="detail-text">Fade to black</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- SUMMARY -->
+  <section class="summary">
+    <h2>Summary</h2>
+    <div class="summary-grid">
+      <div class="key-messages">
+        <h3>Key Messages</h3>
+        <ul>
+          <li>Drug development costs $2.6B per drug with a 90% failure rate</li>
+          <li>The root cause: reliance on correlational analysis, not causal inference</li>
+          <li>BiRAGAS is the first AI platform for patient-level causal graphs from multi-omics data</li>
+          <li>7 phases, 23 modules &mdash; from raw data to validated, auditable drug targets</li>
+          <li>Tagline: "Causality, Not Correlation. That's Intelligent Biology in Motion."</li>
+        </ul>
+      </div>
+      <div class="cta-section">
+        <h3>Call to Action</h3>
+        <div class="cta-box">
+          <div style="font-size:13px;color:rgba(255,255,255,0.6);">Visit</div>
+          <div class="cta-url">ayassbioscience.com</div>
+          <div class="cta-action">Learn More</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>

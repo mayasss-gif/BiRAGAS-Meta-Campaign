@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Storyboard: Founder Story | Ayass Bioscience</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0A1628;
+  --teal: #00B4D8;
+  --white: #FFFFFF;
+  --gold: #FFB703;
+  --red: #E63946;
+  --green: #2A9D8F;
+  --gray-100: #F8F9FA;
+  --gray-200: #E9ECEF;
+  --gray-300: #DEE2E6;
+  --gray-500: #6C757D;
+  --gray-700: #495057;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--gray-100);
+  color: var(--navy);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+.cover {
+  background: linear-gradient(135deg, var(--navy) 0%, #1a2a4a 50%, #162040 100%);
+  border-radius: 16px;
+  padding: 60px 48px;
+  color: var(--white);
+  margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cover::before {
+  content: '';
+  position: absolute;
+  bottom: -20%;
+  right: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255,183,3,0.08) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.cover::after {
+  content: '';
+  position: absolute;
+  top: -15%;
+  left: -5%;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(0,180,216,0.08) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.cover-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+.cover h1 {
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+
+.cover h1 span { color: var(--gold); }
+
+.cover .subtitle {
+  font-size: 20px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 12px;
+}
+
+.cover .founder-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--teal);
+  margin-bottom: 32px;
+}
+
+.cover-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.meta-item {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.meta-item .label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 4px;
+}
+
+.meta-item .value {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.production-notes {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 12px;
+  padding: 32px;
+  margin-bottom: 40px;
+}
+
+.production-notes h2 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.production-notes h2::before {
+  content: '';
+  width: 4px;
+  height: 20px;
+  background: var(--gold);
+  border-radius: 2px;
+}
+
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.note-card {
+  background: var(--gray-100);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.note-card .note-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  margin-bottom: 6px;
+}
+
+.note-card .note-value {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.color-swatches {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.swatch {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid var(--white);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.timeline-bar {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 12px;
+  padding: 24px 32px;
+  margin-bottom: 40px;
+}
+
+.timeline-bar h2 {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  margin-bottom: 16px;
+}
+
+.timeline-track {
+  display: flex;
+  height: 48px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--gray-200);
+}
+
+.timeline-segment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.frames-section h2 {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 24px;
+}
+
+.frame-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 32px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  page-break-inside: avoid;
+}
+
+.frame-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background: var(--navy);
+  color: var(--white);
+}
+
+.frame-number {
+  font-size: 14px;
+  font-weight: 800;
+  background: var(--gold);
+  color: var(--navy);
+  padding: 4px 14px;
+  border-radius: 20px;
+}
+
+.frame-title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.frame-time {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gold);
+  background: rgba(255,183,3,0.15);
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.frame-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.frame-visual {
+  background: #0d1b2a;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.frame-details {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.detail-block {
+  border-left: 3px solid var(--gray-200);
+  padding-left: 14px;
+}
+
+.detail-block.vo { border-color: var(--teal); }
+.detail-block.onscreen { border-color: var(--gold); }
+.detail-block.visual-desc { border-color: var(--green); }
+.detail-block.transition { border-color: var(--red); }
+.detail-block.music { border-color: var(--gray-500); }
+
+.detail-label {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.detail-block.vo .detail-label { color: var(--teal); }
+.detail-block.onscreen .detail-label { color: var(--gold); }
+.detail-block.visual-desc .detail-label { color: var(--green); }
+.detail-block.transition .detail-label { color: var(--red); }
+.detail-block.music .detail-label { color: var(--gray-500); }
+
+.detail-text {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--gray-700);
+}
+
+.detail-text em {
+  font-style: italic;
+  color: var(--gray-500);
+}
+
+/* Founder-specific visuals */
+.founder-portrait {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(0,180,216,0.3), rgba(255,183,3,0.3));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  border: 3px solid rgba(255,255,255,0.2);
+}
+
+.founder-portrait-inner {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1a3050, #0d2035);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.founder-icon {
+  width: 48px;
+  height: 48px;
+  fill: rgba(255,255,255,0.4);
+}
+
+.lower-third {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background: rgba(10,22,40,0.85);
+  border-left: 3px solid var(--gold);
+  padding: 12px 16px;
+  border-radius: 0 6px 6px 0;
+}
+
+.lower-third .lt-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.lower-third .lt-title {
+  font-size: 11px;
+  color: var(--teal);
+  font-weight: 500;
+}
+
+/* B-roll indicator */
+.broll-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(230,57,70,0.8);
+  color: white;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 1px;
+}
+
+.interview-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(0,180,216,0.8);
+  color: white;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 1px;
+}
+
+/* Stats overlay */
+.stat-pill {
+  display: inline-block;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--white);
+  margin: 4px;
+}
+
+.stat-pill .stat-num {
+  color: var(--gold);
+  font-weight: 800;
+}
+
+/* Timeline milestone */
+.timeline-milestones {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+  max-width: 280px;
+}
+
+.milestone {
+  text-align: center;
+  flex: 1;
+}
+
+.milestone-year {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--gold);
+}
+
+.milestone-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--teal);
+  margin: 6px auto;
+}
+
+.milestone-line {
+  height: 2px;
+  background: rgba(255,255,255,0.15);
+  flex: 1;
+  margin-top: 24px;
+}
+
+.milestone-desc {
+  font-size: 8px;
+  color: rgba(255,255,255,0.5);
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.summary {
+  background: linear-gradient(135deg, var(--navy) 0%, #1a2a4a 100%);
+  border-radius: 16px;
+  padding: 48px;
+  color: var(--white);
+  margin-top: 40px;
+}
+
+.summary h2 {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 24px;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.key-messages h3, .cta-section h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--teal);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.key-messages ul {
+  list-style: none;
+  padding: 0;
+}
+
+.key-messages li {
+  padding: 8px 0;
+  padding-left: 20px;
+  position: relative;
+  font-size: 14px;
+  color: rgba(255,255,255,0.85);
+}
+
+.key-messages li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 14px;
+  width: 8px;
+  height: 8px;
+  background: var(--gold);
+  border-radius: 50%;
+}
+
+.cta-box {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+}
+
+.cta-box .cta-url {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--gold);
+  margin-top: 8px;
+}
+
+.cta-box .cta-action {
+  display: inline-block;
+  margin-top: 12px;
+  background: var(--teal);
+  color: var(--navy);
+  font-weight: 700;
+  padding: 10px 28px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .frame-body { grid-template-columns: 1fr; }
+  .frame-visual { min-height: 260px; }
+  .cover h1 { font-size: 32px; }
+  .cover-meta { grid-template-columns: 1fr 1fr; }
+  .summary-grid { grid-template-columns: 1fr; }
+}
+
+@media print {
+  body { background: white; }
+  .container { padding: 0; max-width: 100%; }
+  .cover, .frame-header, .frame-visual, .summary, .timeline-track, .timeline-segment, .swatch,
+  .lower-third, .broll-badge, .interview-badge, .milestone-dot {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .cover { border-radius: 0; padding: 40px; }
+  .frame-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    margin-bottom: 20px;
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+  .frame-visual { min-height: 240px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- COVER -->
+  <section class="cover">
+    <div class="cover-label">Retargeting Video Storyboard</div>
+    <h1><span>Founder</span> Story</h1>
+    <div class="subtitle">60-Second Retargeting Video &mdash; Ayass Bioscience</div>
+    <div class="founder-name">Featuring Dr. Mohamad Ammar Ayass, MD, FCCP &mdash; Founder &amp; CEO</div>
+    <div class="cover-meta">
+      <div class="meta-item">
+        <div class="label">Duration</div>
+        <div class="value">60 seconds</div>
+      </div>
+      <div class="meta-item">
+        <div class="label">Format</div>
+        <div class="value">MP4 / MOV</div>
+      </div>
+      <div class="meta-item">
+        <div class="label">Aspect Ratio</div>
+        <div class="value">16:9 (landscape) + 1:1 cut</div>
+      </div>
+      <div class="meta-item">
+        <div class="label">Target Audience</div>
+        <div class="value">Warm audience: prior site visitors, video viewers, engaged users</div>
+      </div>
+      <div class="meta-item">
+        <div class="label">Funnel Stage</div>
+        <div class="value">Bottom of Funnel &mdash; Retargeting</div>
+      </div>
+      <div class="meta-item">
+        <div class="label">Platforms</div>
+        <div class="value">LinkedIn, Meta (FB/IG), YouTube</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTION NOTES -->
+  <section class="production-notes">
+    <h2>Production Notes</h2>
+    <div class="notes-grid">
+      <div class="note-card">
+        <div class="note-label">Music Style</div>
+        <div class="note-value">Warm, ambient, inspirational. Subtle piano or strings. Builds confidence without overpowering the founder's voice.</div>
+      </div>
+      <div class="note-card">
+        <div class="note-label">Shoot Style</div>
+        <div class="note-value">Professional talking-head interview. Single camera or two-camera setup. Shallow depth of field. Clean background (office or lab).</div>
+      </div>
+      <div class="note-card">
+        <div class="note-label">VO / Speaker</div>
+        <div class="note-value">Dr. Mohamad Ammar Ayass speaking directly to camera. Authentic, warm, authoritative. Not scripted-feeling &mdash; conversational gravitas.</div>
+      </div>
+      <div class="note-card">
+        <div class="note-label">B-Roll</div>
+        <div class="note-value">Lab footage, clinical settings, data screens, team working, BiRAGAS platform visualizations. Intercut with founder speaking.</div>
+      </div>
+      <div class="note-card">
+        <div class="note-label">Color Palette</div>
+        <div class="note-value">
+          Warm, professional:
+          <div class="color-swatches">
+            <div class="swatch" style="background:#0A1628;" title="Navy"></div>
+            <div class="swatch" style="background:#00B4D8;" title="Teal"></div>
+            <div class="swatch" style="background:#FFB703;" title="Gold"></div>
+            <div class="swatch" style="background:#FFFFFF;border-color:#ddd;" title="White"></div>
+          </div>
+        </div>
+      </div>
+      <div class="note-card">
+        <div class="note-label">Lower Thirds</div>
+        <div class="note-value">Navy background with gold accent bar. Inter Bold for names, Inter Medium for titles. Consistent throughout.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="timeline-bar">
+    <h2>Video Timeline (60s)</h2>
+    <div class="timeline-track">
+      <div class="timeline-segment" style="flex:5;background:var(--navy);">0-5s</div>
+      <div class="timeline-segment" style="flex:10;background:var(--teal);">5-15s</div>
+      <div class="timeline-segment" style="flex:7;background:#0891B2;">15-22s</div>
+      <div class="timeline-segment" style="flex:13;background:var(--gold);color:var(--navy);">22-35s</div>
+      <div class="timeline-segment" style="flex:10;background:var(--green);">35-45s</div>
+      <div class="timeline-segment" style="flex:7;background:#1E3A5F;">45-52s</div>
+      <div class="timeline-segment" style="flex:5;background:var(--teal);">52-57s</div>
+      <div class="timeline-segment" style="flex:3;background:var(--navy);">57-60s</div>
+    </div>
+  </section>
+
+  <!-- FRAMES -->
+  <section class="frames-section">
+    <h2>Frame-by-Frame Storyboard</h2>
+
+    <!-- FRAME 1 -->
+    <div class="frame-card">
+      <div class="frame-header">
+        <span class="frame-number">F1</span>
+        <span class="frame-title">Founder Introduction</span>
+        <span class="frame-time">0:00 &ndash; 0:05</span>
+      </div>
+      <div class="frame-body">
+        <div class="frame-visual">
+          <div class="interview-badge">INTERVIEW</div>
+          <div style="text-align:center;">
+            <div class="founder-portrait">
+              <div class="founder-portrait-inner">
+                <svg class="founder-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="24" cy="16" r="10" fill="rgba(255,255,255,0.3)"/>
+                  <path d="M6 44 C6 32, 42 32, 42 44" fill="rgba(255,255,255,0.2)"/>
+                </svg>
+              </div>
+            </div>
+            <div style="font-size:11px;color:rgba(255,255,255,0.4);font-weight:500;">Professional headshot / video setting</div>
+          </div>
+          <div class="lower-third">
+            <div class="lt-name">Dr. Mohamad Ammar Ayass, MD, FCCP</div>
+            <div class="lt-title">Founder &amp; CEO, Ayass Bioscience</div>
+          </div>
+        </div>
+        <div class="frame-details">
+          <div class="detail-block vo">
+            <div class="detail-label">Voiceover (Dr. Ayass)</div>
+            <div class="detail-text">"I'm a board-certified physician-scientist in pulmonary-critical care and nephrology."</div>
+          </div>
+          <div class="detail-block onscreen">
+            <div class="detail-label">On-Screen Text</div>
+            <div class="detail-text">Lower third: "Dr. Mohamad Ammar Ayass, MD, FCCP" / "Founder &amp; CEO, Ayass Bioscience"</div>
+          </div>
+          <div class="detail-block visual-desc">
+            <div class="detail-label">Visual Description</div>
+            <div class="detail-text">Professional headshot/video of founder in office or lab setting. Shallow depth of field. Warm lighting. Lower third appears with name and title. Establishes credibility immediately.</div>
+          </div>
+          <div class="detail-block transition">
+            <div class="detail-label">Transition</div>
+            <div class="detail-text">Gentle zoom in &mdash; intimate, personal feel</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FRAME 2 -->
+    <div class="frame-card">
+      <div class="frame-header">
+        <span class="frame-number">F2</span>
+        <span class="frame-title">The Problem He Saw</span>
+        <span class="frame-time">0:05 &ndash; 0:15</span>
+      </div>
+      <div class="frame-body">
+        <div class="frame-visual">
+          <div class="broll-badge">B-ROLL + INTERVIEW</div>
+          <div style="width:100%;max-width:280px;">
+            <!-- Intercut visual mockup -->
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px;">
+              <div style="background:rgba(255,255,255,0.04);border-radius:6px;padding:12px;text-align:center;border:1px solid rgba(255,255,255,0.08);">
+                <svg viewBox="0 0 60 40" style="width:50px;">
+                  <rect x="5" y="25" width="8" height="12" rx="2" fill="rgba(0,180,216,0.4)"/>
+                  <rect x="18" y="20" width="8" height="17" rx="2" fill="rgba(0,180,216,0.5)"/>
+                  <rect x="31" y="15" width="8" height="22" rx="2" fill="rgba(0,180,216,0.6)"/>
+                  <rect x="44" y="10" width="8" height="27" rx="2" fill="rgba(0,180,216,0.3)"/>
+                  <line x1="5" y1="37" x2="55" y2="37" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+                </svg>
+                <div style="font-size:7px;color:rgba(255,255,255,0.3);margin-top:4px;">Failed biomarker data</div>
+              </div>
+              <div style="background:rgba(255,255,255,0.04);border-radius:6px;padding:12px;text-align:center;border:1px solid rgba(255,255,255,0.08);">
+                <svg viewBox="0 0 60 40" style="width:50px;">
+                  <circle cx="15" cy="15" r="3" fill="rgba(230,57,70,0.5)"/>
+                  <circle cx="30" cy="25" r="3" fill="rgba(230,57,70,0.4)"/>
+                  <circle cx="45" cy="12" r="3" fill="rgba(230,57,70,0.6)"/>
+                  <circle cx="20" cy="30" r="3" fill="rgba(230,57,70,0.3)"/>
+                  <circle cx="40" cy="32" r="3" fill="rgba(230,57,70,0.5)"/>
+                  <circle cx="25" cy="10" r="3" fill="rgba(230,57,70,0.4)"/>
+                  <line x1="5" y1="37" x2="55" y2="37" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+                  <line x1="5" y1="5" x2="55" y2="35" stroke="rgba(255,255,255,0.1)" stroke-width="1" stroke-dasharray="3,3"/>
+                </svg>
+                <div style="font-size:7px;color:rgba(255,255,255,0.3);margin-top:4px;">No replication</div>
+              </div>
+            </div>
+            <div style="text-align:center;background:rgba(230,57,70,0.1);border-radius:8px;padding:10px;border:1px solid rgba(230,57,70,0.2);">
+              <div style="font-size:14px;font-weight:700;color:var(--red);">15 years of watching biomarkers fail</div>
+            </div>
+          </div>
+        </div>
+        <div class="frame-details">
+          <div class="detail-block vo">
+            <div class="detail-label">Voiceover (Dr. Ayass)</div>
+            <div class="detail-text">"For 15 years, I watched the same pattern: promising biomarkers discovered through correlational analysis that failed to replicate in the clinic."</div>
+          </div>
+          <div class="detail-block onscreen">
+            <div class="detail-label">On-Screen Text</div>
+            <div class="detail-text">"15 years of watching biomarkers fail"</div>
+          </div>
+          <div class="detail-block visual-desc">
+            <div class="detail-label">Visual Description</div>
+            <div class="detail-text">Intercut between founder speaking and B-roll of clinical settings, lab work, and data screens showing failed biomarker studies. Creates emotional weight. Shows he's lived this problem.</div>
+          </div>
+          <div class="detail-block transition">
+            <div class="detail-label">Transition</div>
+            <div class="detail-text">Cross-dissolve between interview and B-roll</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FRAME 3 -->
+    <div class="frame-card">
+      <div class="frame-header">
+        <span class="frame-number">F3</span>
+        <span class="frame-title">The Insight</span>
+        <span class="frame-time">0:15 &ndash; 0:22</span>
+      </div>
+      <div class="frame-body">
+        <div class="frame-visual">
+          <div class="interview-badge">INTERVIEW</div>
+          <div style="text-align:center;">
+            <div class="founder-portrait" style="width:80px;height:80px;margin-bottom:20px;">
+              <div class="founder-portrait-inner" style="width:66px;height:66px;">
+                <svg viewBox="0 0 48 48" style="width:32px;fill:rgba(255,255,255,0.3);">
+                  <circle cx="24" cy="16" r="10"/>
+                  <path d="M6 44 C6 32, 42 32, 42 44"/>
+                </svg>
+              </div>
+            </div>
+            <!-- Animated text behind -->
+            <div style="margin-top:12px;">
+              <div style="font-size:22px;font-weight:800;color:var(--white);opacity:0.9;">The problem isn't the data.</div>
+              <div style="font-size:22px;font-weight:800;color:var(--gold);margin-top:4px;">The problem is the logic.</div>
+            </div>
+            <div style="margin-top:20px;padding:10px 20px;background:rgba(230,57,70,0.1);border:1px solid rgba(230,57,70,0.3);border-radius:8px;display:inline-block;">
+              <span style="font-size:16px;font-weight:700;color:var(--red);">Correlation &ne; Causation</span>
+            </div>
+          </div>
+        </div>
+        <div class="frame-details">
+          <div class="detail-block vo">
+            <div class="detail-label">Voiceover (Dr. Ayass)</div>
+            <div class="detail-text">"The problem isn't the data. The problem is the logic. Correlation is not causation &mdash; and the tools we've been using can't tell the difference."</div>
+          </div>
+          <div class="detail-block onscreen">
+            <div class="detail-label">On-Screen Text</div>
+            <div class="detail-text">"The problem isn't the data. The problem is the logic." / "Correlation &ne; Causation"</div>
+          </div>
+          <div class="detail-block visual-desc">
+            <div class="detail-label">Visual Description</div>
+            <div class="detail-text">Founder speaking directly to camera. Behind him, animated text appears: "Correlation &ne; Causation." Text emphasis animation draws the eye. This is the philosophical core of the video.</div>
+          </div>
+          <div class="detail-block transition">
+            <div class="detail-label">Transition</div>
+            <div class="detail-text">Text emphasis animation &mdash; words appear with weight</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FRAME 4 -->
+    <div class="frame-card">
+      <div class="frame-header">
+        <span class="frame-number">F4</span>
+        <span class="frame-title">BiRAGAS</span>
+        <span class="frame-time">0:22 &ndash; 0:35</span>
+      </div>
+      <div class="frame-body">
+        <div class="frame-visual">
+          <div class="broll-badge">SPLIT: INTERVIEW + ANIMATION</div>
+          <div style="width:100%;max-width:280px;">
+            <!-- Platform visuals -->
+            <div style="text-align:center;margin-bottom:16px;">
+              <svg viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:200px;">
+                <defs>
+                  <marker id="af" markerWidth="6" markerHeight="5" refX="6" refY="2.5" orient="auto">
+                    <polygon points="0 0, 6 2.5, 0 5" fill="rgba(0,180,216,0.6)"/>
+                  </marker>
+                </defs>
+                <circle cx="30" cy="20" r="8" fill="#FFB703" opacity="0.7"/>
+                <circle cx="70" cy="15" r="8" fill="#00B4D8" opacity="0.7"/>
+                <circle cx="110" cy="25" r="8" fill="#2A9D8F" opacity="0.7"/>
+                <circle cx="150" cy="18" r="8" fill="#00B4D8" opacity="0.7"/>
+                <circle cx="50" cy="50" r="7" fill="#00B4D8" opacity="0.5"/>
+                <circle cx="90" cy="55" r="7" fill="#FFB703" opacity="0.5"/>
+                <circle cx="130" cy="48" r="7" fill="#2A9D8F" opacity="0.5"/>
+                <circle cx="100" cy="75" r="8" fill="#fff" opacity="0.7"/>
+                <line x1="38" y1="24" x2="44" y2="44" stroke="rgba(0,180,216,0.4)" stroke-width="1" marker-end="url(#af)"/>
+                <line x1="66" y1="22" x2="54" y2="44" stroke="rgba(0,180,216,0.4)" stroke-width="1" marker-end="url(#af)"/>
+                <line x1="78" y1="18" x2="84" y2="48" stroke="rgba(0,180,216,0.4)" stroke-width="1" marker-end="url(#af)"/>
+                <line x1="106" y1="32" x2="96" y2="48" stroke="rgba(0,180,216,0.4)" stroke-width="1" marker-end="url(#af)"/>
+                <line x1="118" y1="30" x2="124" y2="42" stroke="rgba(0,180,216,0.4)" stroke-width="1" marker-end="url(#af)"/>
+                <line x1="146" y1="25" x2="136" y2="42" stroke="rgba(0,180,216,0.4)" stroke-width="1" marker-end="url(#af)"/>
+                <line x1="56" y1="56" x2="93" y2="69" stroke="rgba(255,255,255,0.3)" stroke-width="1" marker-end="url(#af)"/>
+                <line x1="90" y1="62" x2="96" y2="68" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+                <line x1="124" y1="54" x2="107" y2="69" stroke="rgba(255,255,255,0.3)" stroke-width="1" marker-end="url(#af)"/>
+              </svg>
+            </div>
+            <!-- Stats pills -->
+            <div style="text-align:center;">
+              <div class="stat-pill"><span class="stat-num">23</span> modules</div>
+              <div class="stat-pill"><span class="stat-num">9</span> data streams</div>
+              <div class="stat-pill"><span class="stat-num">5</span> MR methods</div>
+              <div class="stat-pill"><span class="stat-num">do</span>-calculus</div>
+            </div>
+            <!-- Validation checkmarks -->
+            <div style="margin-top:16px;display:flex;justify-content:center;gap:12px;">
+              <div style="text-align:center;">
+                <div style="width:28px;height:28px;border-radius:50%;background:rgba(42,157,143,0.2);border:1px solid rgba(42,157,143,0.4);display:flex;align-items:center;justify-content:center;margin:0 auto;">
+                  <span style="color:var(--green);font-size:14px;font-weight:700;">&#10003;</span>
+                </div>
+                <div style="font-size:7px;color:rgba(255,255,255,0.4);margin-top:4px;">MR Valid</div>
+              </div>
+              <div style="text-align:center;">
+                <div style="width:28px;height:28px;border-radius:50%;background:rgba(42,157,143,0.2);border:1px solid rgba(42,157,143,0.4);display:flex;align-items:center;justify-content:center;margin:0 auto;">
+                  <span style="color:var(--green);font-size:14px;font-weight:700;">&#10003;</span>
+                </div>
+                <div style="font-size:7px;color:rgba(255,255,255,0.4);margin-top:4px;">Hallucination-Free</div>
+              </div>
+              <div style="text-align:center;">
+                <div style="width:28px;height:28px;border-radius:50%;background:rgba(42,157,143,0.2);border:1px solid rgba(42,157,143,0.4);display:flex;align-items:center;justify-content:center;margin:0 auto;">
+                  <span style="color:var(--green);font-size:14px;font-weight:700;">&#10003;</span>
+                </div>
+                <div style="font-size:7px;color:rgba(255,255,255,0.4);margin-top:4px;">Reg-Grade</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="frame-details">
+          <div class="detail-block vo">
+            <div class="detail-label">Voiceover (Dr. Ayass)</div>
+            <div class="detail-text">"That's why we built BiRAGAS. It's a 23-module causal inference engine that integrates 9 data streams, validates every edge with Mendelian Randomization, detects AI hallucinations, simulates interventions with Pearl's do-calculus, and generates regulatory-grade evidence packages."</div>
+          </div>
+          <div class="detail-block onscreen">
+            <div class="detail-label">On-Screen Text</div>
+            <div class="detail-text">Key stats appearing one by one: "23 modules" / "9 data streams" / "5 MR methods" / "do-calculus"</div>
+          </div>
+          <div class="detail-block visual-desc">
+            <div class="detail-label">Visual Description</div>
+            <div class="detail-text">Split between founder speaking and animated BiRAGAS platform visuals (DAG networks, phase pipeline, validation checkmarks). Stats overlay as pills. This is the product showcase section.</div>
+          </div>
+          <div class="detail-block transition">
+            <div class="detail-label">Transition</div>
+            <div class="detail-text">Stats overlay &mdash; each stat appears on beat</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FRAME 5 -->
+    <div class="frame-card">
+      <div class="frame-header">
+        <span class="frame-number">F5</span>
+        <span class="frame-title">The Investment</span>
+        <span class="frame-time">0:35 &ndash; 0:45</span>
+      </div>
+      <div class="frame-body">
+        <div class="frame-visual">
+          <div class="interview-badge">INTERVIEW</div>
+          <div style="width:100%;max-width:280px;">
+            <!-- Timeline milestones -->
+            <div class="timeline-milestones">
+              <div class="milestone">
+                <div class="milestone-year">2011</div>
+                <div class="milestone-dot"></div>
+                <div class="milestone-desc">Founded</div>
+              </div>
+              <div class="milestone-line"></div>
+              <div class="milestone">
+                <div class="milestone-year">2016</div>
+                <div class="milestone-dot" style="background:var(--gold);"></div>
+                <div class="milestone-desc">Early R&D</div>
+              </div>
+              <div class="milestone-line"></div>
+              <div class="milestone">
+                <div class="milestone-year">2020</div>
+                <div class="milestone-dot" style="background:var(--gold);"></div>
+                <div class="milestone-desc">BiRAGAS Dev</div>
+              </div>
+              <div class="milestone-line"></div>
+              <div class="milestone">
+                <div class="milestone-year">2025</div>
+                <div class="milestone-dot" style="background:var(--green);"></div>
+                <div class="milestone-desc">Operational</div>
+              </div>
+            </div>
+            <!-- Key stats -->
+            <div style="margin-top:24px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;">
+              <div style="text-align:center;background:rgba(255,183,3,0.08);border:1px solid rgba(255,183,3,0.2);border-radius:8px;padding:12px;">
+                <div style="font-size:20px;font-weight:900;color:var(--gold);">$23M</div>
+                <div style="font-size:9px;color:rgba(255,255,255,0.5);font-weight:600;">self-funded</div>
+              </div>
+              <div style="text-align:center;background:rgba(0,180,216,0.08);border:1px solid rgba(0,180,216,0.2);border-radius:8px;padding:12px;">
+                <div style="font-size:20px;font-weight:900;color:var(--teal);">18</div>
+                <div style="font-size:9px;color:rgba(255,255,255,0.5);font-weight:600;">publications</div>
+              </div>
+              <div style="text-align:center;background:rgba(42,157,143,0.08);border:1px solid rgba(42,157,143,0.2);border-radius:8px;padding:12px;">
+                <div style="font-size:20px;font-weight:900;color:var(--green);">2025</div>
+                <div style="font-size:9px;color:rgba(255,255,255,0.5);font-weight:600;">operational</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="frame-details">
+          <div class="detail-block vo">
+            <div class="detail-label">Voiceover (Dr. Ayass)</div>
+            <div class="detail-text">"We've invested $23 million of our own capital. Published 18 peer-reviewed papers. And reached operational status with an active patient pipeline."</div>
+          </div>
+          <div class="detail-block onscreen">
+            <div class="detail-label">On-Screen Text</div>
+            <div class="detail-text">"$23M self-funded" / "18 publications" / "Operational since 2025"</div>
+          </div>
+          <div class="detail-block visual-desc">
+            <div class="detail-label">Visual Description</div>
+            <div class="detail-text">Founder speaking. Background shows animated timeline of milestones: 2011 &rarr; 2016 &rarr; 2020 &rarr; 2025. Key stats appear below. Builds trust through demonstrated commitment.</div>
+          </div>
+          <div class="detail-block transition">
+            <div class="detail-label">Transition</div>
+            <div class="detail-text">Timeline animation &mdash; milestones light up sequentially</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FRAME 6 -->
+    <div class="frame-card">
+      <div class="frame-header">
+        <span class="frame-number">F6</span>
+        <span class="frame-title">The Mission</span>
+        <span class="frame-time">0:45 &ndash; 0:52</span>
+      </div>
+      <div class="frame-body">
+        <div class="frame-visual">
+          <div class="interview-badge">CLOSE-UP</div>
+          <div style="text-align:center;">
+            <div class="founder-portrait" style="width:100px;height:100px;margin-bottom:20px;border-color:rgba(0,180,216,0.4);">
+              <div class="founder-portrait-inner" style="width:84px;height:84px;">
+                <svg viewBox="0 0 48 48" style="width:40px;fill:rgba(255,255,255,0.35);">
+                  <circle cx="24" cy="16" r="10"/>
+                  <path d="M6 44 C6 32, 42 32, 42 44"/>
+                </svg>
+              </div>
+            </div>
+            <div style="max-width:240px;margin:0 auto;">
+              <div style="font-size:15px;font-weight:600;color:var(--white);line-height:1.5;">Built by a <span style="color:var(--teal);">physician</span>.</div>
+              <div style="font-size:15px;font-weight:600;color:var(--white);line-height:1.5;">For the problems seen at the <span style="color:var(--gold);">bedside</span>.</div>
+            </div>
+          </div>
+        </div>
+        <div class="frame-details">
+          <div class="detail-block vo">
+            <div class="detail-label">Voiceover (Dr. Ayass)</div>
+            <div class="detail-text">"This isn't another AI company making promises. This is causal science, built by a physician, for the problems I've seen at the bedside."</div>
+          </div>
+          <div class="detail-block onscreen">
+            <div class="detail-label">On-Screen Text</div>
+            <div class="detail-text">"Built by a physician. For the problems seen at the bedside."</div>
+          </div>
+          <div class="detail-block visual-desc">
+            <div class="detail-label">Visual Description</div>
+            <div class="detail-text">Close-up of founder, sincere and direct to camera. Intimate, vulnerable moment. This is the emotional peak &mdash; not a pitch, but a personal mission statement.</div>
+          </div>
+          <div class="detail-block transition">
+            <div class="detail-label">Transition</div>
+            <div class="detail-text">Slow zoom &mdash; drawing the viewer in</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FRAME 7 -->
+    <div class="frame-card">
+      <div class="frame-header">
+        <span class="frame-number">F7</span>
+        <span class="frame-title">CTA</span>
+        <span class="frame-time">0:52 &ndash; 0:57</span>
+      </div>
+      <div class="frame-body">
+        <div class="frame-visual">
+          <div class="interview-badge">INTERVIEW</div>
+          <div style="text-align:center;">
+            <div class="founder-portrait" style="width:60px;height:60px;margin-bottom:16px;">
+              <div class="founder-portrait-inner" style="width:50px;height:50px;">
+                <svg viewBox="0 0 48 48" style="width:24px;fill:rgba(255,255,255,0.3);">
+                  <circle cx="24" cy="16" r="10"/>
+                  <path d="M6 44 C6 32, 42 32, 42 44"/>
+                </svg>
+              </div>
+            </div>
+            <div style="font-size:22px;font-weight:700;color:var(--white);margin-bottom:4px;">ayassbioscience.com</div>
+            <div style="font-size:12px;color:rgba(255,255,255,0.4);font-weight:500;">Visit to learn more</div>
+          </div>
+        </div>
+        <div class="frame-details">
+          <div class="detail-block vo">
+            <div class="detail-label">Voiceover (Dr. Ayass)</div>
+            <div class="detail-text">"Visit ayassbioscience.com to learn more."</div>
+          </div>
+          <div class="detail-block onscreen">
+            <div class="detail-label">On-Screen Text</div>
+            <div class="detail-text">"ayassbioscience.com"</div>
+          </div>
+          <div class="detail-block visual-desc">
+            <div class="detail-label">Visual Description</div>
+            <div class="detail-text">Founder gestures to camera with a warm, inviting demeanor. ayassbioscience.com appears prominently. Natural transition from personal story to action.</div>
+          </div>
+          <div class="detail-block transition">
+            <div class="detail-label">Transition</div>
+            <div class="detail-text">Fade &mdash; founder image softens into end card</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FRAME 8 -->
+    <div class="frame-card">
+      <div class="frame-header">
+        <span class="frame-number">F8</span>
+        <span class="frame-title">End Card</span>
+        <span class="frame-time">0:57 &ndash; 1:00</span>
+      </div>
+      <div class="frame-body">
+        <div class="frame-visual">
+          <div style="text-align:center;">
+            <div style="font-size:24px;font-weight:900;letter-spacing:3px;color:var(--white);margin-bottom:6px;">AYASS BIOSCIENCE</div>
+            <div style="font-size:13px;font-weight:500;color:var(--teal);margin-bottom:4px;letter-spacing:1px;">Intelligent Biology in Motion</div>
+            <div style="font-size:14px;color:rgba(255,255,255,0.5);margin-bottom:20px;">ayassbioscience.com</div>
+            <div style="display:inline-block;background:var(--teal);color:var(--navy);font-weight:700;font-size:14px;padding:10px 28px;border-radius:8px;">Learn More</div>
+          </div>
+        </div>
+        <div class="frame-details">
+          <div class="detail-block vo">
+            <div class="detail-label">Voiceover</div>
+            <div class="detail-text"><em>None &mdash; music resolve (warm, confident piano/strings ending)</em></div>
+          </div>
+          <div class="detail-block onscreen">
+            <div class="detail-label">On-Screen Text</div>
+            <div class="detail-text">"AYASS BIOSCIENCE" / "Intelligent Biology in Motion" / "ayassbioscience.com" / "Learn More" CTA</div>
+          </div>
+          <div class="detail-block visual-desc">
+            <div class="detail-label">Visual Description</div>
+            <div class="detail-text">Ayass Bioscience logo centered on navy background. Tagline "Intelligent Biology in Motion" in teal below. Website URL and "Learn More" CTA. Clean, professional, memorable close.</div>
+          </div>
+          <div class="detail-block transition">
+            <div class="detail-label">Transition</div>
+            <div class="detail-text">Fade to black</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- SUMMARY -->
+  <section class="summary">
+    <h2>Summary</h2>
+    <div class="summary-grid">
+      <div class="key-messages">
+        <h3>Key Messages</h3>
+        <ul>
+          <li>Dr. Ayass is a board-certified physician-scientist with direct clinical experience of the problem</li>
+          <li>15 years of watching correlational biomarkers fail in the clinic drove the creation of BiRAGAS</li>
+          <li>"The problem isn't the data. The problem is the logic." &mdash; Correlation &ne; Causation</li>
+          <li>BiRAGAS: 23 modules, 9 data streams, 5 MR methods, do-calculus, regulatory-grade evidence</li>
+          <li>$23M self-funded, 18 publications, operational since 2025</li>
+          <li>Not another AI promise &mdash; causal science built by a physician for bedside problems</li>
+        </ul>
+      </div>
+      <div class="cta-section">
+        <h3>Call to Action</h3>
+        <div class="cta-box">
+          <div style="font-size:13px;color:rgba(255,255,255,0.6);">Visit</div>
+          <div class="cta-url">ayassbioscience.com</div>
+          <div class="cta-action">Learn More</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>

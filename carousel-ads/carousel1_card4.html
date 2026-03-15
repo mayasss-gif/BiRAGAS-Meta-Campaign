@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<title>Carousel 1 - Card 4: The Validation</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px; height: 1080px;
+    font-family: 'Inter', sans-serif;
+    background: #0A1628;
+    overflow: hidden;
+    position: relative;
+  }
+  .gold-accent {
+    position: absolute;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: #FFB703;
+    filter: blur(180px);
+    opacity: 0.06;
+    top: -100px; right: -50px;
+  }
+  .content {
+    position: relative; z-index: 2;
+    width: 100%; height: 100%;
+    display: flex; flex-direction: column;
+    align-items: center;
+    padding: 60px 70px 100px;
+  }
+  .indicator {
+    position: absolute; top: 48px; right: 56px;
+    font-size: 20px; font-weight: 700;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 2px;
+  }
+  .title {
+    font-size: 44px; font-weight: 900;
+    color: #FFFFFF;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    letter-spacing: -1px;
+  }
+  .title span { color: #FFB703; }
+  .subtitle {
+    font-size: 18px; font-weight: 400;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 50px;
+  }
+  .columns {
+    display: flex;
+    gap: 60px;
+    width: 100%;
+    justify-content: center;
+    flex: 1;
+  }
+  .column {
+    display: flex; flex-direction: column;
+  }
+  .col-title {
+    font-size: 22px; font-weight: 800;
+    color: #FFB703;
+    margin-bottom: 32px;
+    letter-spacing: 1px;
+  }
+  .check-item {
+    display: flex; align-items: center;
+    margin-bottom: 22px;
+  }
+  .check-icon {
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    background: rgba(45,198,83,0.15);
+    display: flex; align-items: center; justify-content: center;
+    margin-right: 18px;
+    flex-shrink: 0;
+  }
+  .check-icon svg { width: 22px; height: 22px; }
+  .check-label {
+    font-size: 20px; font-weight: 600;
+    color: #FFFFFF;
+    line-height: 1.3;
+  }
+  .check-sublabel {
+    font-size: 14px; font-weight: 400;
+    color: rgba(255,255,255,0.4);
+  }
+  .sensitivity-item {
+    display: flex; align-items: center;
+    margin-bottom: 22px;
+  }
+  .sensitivity-icon {
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    background: rgba(0,180,216,0.15);
+    display: flex; align-items: center; justify-content: center;
+    margin-right: 18px;
+    flex-shrink: 0;
+  }
+  .sensitivity-icon svg { width: 20px; height: 20px; }
+  .sensitivity-label {
+    font-size: 20px; font-weight: 600;
+    color: #FFFFFF;
+  }
+  .divider-line {
+    width: 2px;
+    background: linear-gradient(180deg, rgba(255,183,3,0.4), rgba(0,180,216,0.4));
+    border-radius: 2px;
+    margin-top: 60px;
+  }
+  .branding {
+    position: absolute; bottom: 40px; left: 0; right: 0;
+    text-align: center;
+  }
+  .brand-name {
+    font-size: 22px; font-weight: 800;
+    color: #FFFFFF;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .brand-tagline {
+    font-size: 14px; font-weight: 400;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .top-accent {
+    position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, #00B4D8, #FFB703, #2DC653);
+  }
+</style>
+</head>
+<body>
+<div class="top-accent"></div>
+<div class="gold-accent"></div>
+
+<div class="content">
+  <div class="indicator">4 / 5</div>
+
+  <h1 class="title"><span>5</span> MR Methods. <span>4</span> Sensitivity Analyses.</h1>
+  <p class="subtitle">Multi-method causal validation eliminates false positives</p>
+
+  <div class="columns">
+    <div class="column">
+      <div class="col-title">5 MR Methods</div>
+
+      <div class="check-item">
+        <div class="check-icon">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2DC653" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <div class="check-label">IVW</div>
+          <div class="check-sublabel">Inverse Variance Weighted</div>
+        </div>
+      </div>
+
+      <div class="check-item">
+        <div class="check-icon">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2DC653" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <div class="check-label">MR-Egger</div>
+          <div class="check-sublabel">Pleiotropy-robust</div>
+        </div>
+      </div>
+
+      <div class="check-item">
+        <div class="check-icon">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2DC653" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <div class="check-label">Weighted Median</div>
+          <div class="check-sublabel">Majority valid instruments</div>
+        </div>
+      </div>
+
+      <div class="check-item">
+        <div class="check-icon">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2DC653" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <div class="check-label">Weighted Mode</div>
+          <div class="check-sublabel">Plurality valid estimate</div>
+        </div>
+      </div>
+
+      <div class="check-item">
+        <div class="check-icon">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2DC653" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <div class="check-label">MR-PRESSO</div>
+          <div class="check-sublabel">Outlier detection</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider-line"></div>
+
+    <div class="column">
+      <div class="col-title" style="color: #00B4D8;">4 Sensitivity Tests</div>
+
+      <div class="sensitivity-item">
+        <div class="sensitivity-icon">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#00B4D8" stroke-width="2"/><path d="M12 8v4l2 2" stroke="#00B4D8" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="sensitivity-label">Cochran's Q</div>
+      </div>
+
+      <div class="sensitivity-item">
+        <div class="sensitivity-icon">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M7 17l5-10 5 10" stroke="#00B4D8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="9" y1="13" x2="15" y2="13" stroke="#00B4D8" stroke-width="2"/></svg>
+        </div>
+        <div class="sensitivity-label">Steiger Directionality</div>
+      </div>
+
+      <div class="sensitivity-item">
+        <div class="sensitivity-icon">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="8" cy="12" r="3" stroke="#00B4D8" stroke-width="2"/><circle cx="16" cy="12" r="3" stroke="#00B4D8" stroke-width="2"/><line x1="5" y1="12" x2="19" y2="12" stroke="#00B4D8" stroke-width="1.5" stroke-dasharray="2,2"/></svg>
+        </div>
+        <div class="sensitivity-label">Leave-One-Out</div>
+      </div>
+
+      <div class="sensitivity-item">
+        <div class="sensitivity-icon">
+          <svg viewBox="0 0 24 24" fill="none"><line x1="4" y1="18" x2="20" y2="6" stroke="#00B4D8" stroke-width="2"/><circle cx="8" cy="15" r="2" fill="#00B4D8" opacity="0.5"/><circle cx="14" cy="10" r="2" fill="#00B4D8" opacity="0.5"/></svg>
+        </div>
+        <div class="sensitivity-label">Egger Intercept</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="branding">
+    <div class="brand-name">Ayass Bioscience</div>
+    <div class="brand-tagline">Intelligent Biology in Motion</div>
+  </div>
+</div>
+</body>
+</html>

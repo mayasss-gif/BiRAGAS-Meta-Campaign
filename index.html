@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BiRAGAS Meta Advertising Campaign | Ayass Bioscience LLC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --navy: #0A1628;
+            --navy-light: #0F2035;
+            --teal: #00B4D8;
+            --teal-dark: #0096B4;
+            --gold: #FFB703;
+            --white: #FFFFFF;
+            --gray: #F8F9FA;
+            --gray-mid: #94A3B8;
+            --emerald: #2DC653;
+        }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--navy);
+            color: var(--white);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            padding: 1rem 2rem;
+            background: rgba(10, 22, 40, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 180, 216, 0.1);
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .logo {
+            font-weight: 800; font-size: 1.1rem; letter-spacing: 2px;
+            background: linear-gradient(135deg, var(--teal), var(--gold));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .logo span { font-weight: 400; font-size: 0.7rem; display: block; letter-spacing: 1px;
+            background: none; -webkit-text-fill-color: var(--gray-mid);
+        }
+        header a {
+            color: var(--teal); text-decoration: none; font-size: 0.85rem; font-weight: 500;
+            transition: color 0.3s;
+        }
+        header a:hover { color: var(--gold); }
+
+        /* Hero */
+        .hero {
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(ellipse at 30% 20%, rgba(0, 180, 216, 0.08) 0%, transparent 50%),
+                        radial-gradient(ellipse at 70% 80%, rgba(255, 183, 3, 0.05) 0%, transparent 50%);
+        }
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        .hero h1 .gradient {
+            background: linear-gradient(135deg, var(--teal), #90E0EF, var(--gold));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .hero p {
+            font-size: 1.1rem; color: var(--gray-mid);
+            max-width: 700px; margin: 0 auto 2rem;
+            position: relative;
+        }
+        .hero .badge {
+            display: inline-block;
+            padding: 0.4rem 1rem; border-radius: 50px;
+            background: rgba(0, 180, 216, 0.1);
+            border: 1px solid rgba(0, 180, 216, 0.3);
+            font-size: 0.8rem; color: var(--teal);
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        /* Sections */
+        .section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-title {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+        .section-subtitle {
+            color: var(--gray-mid);
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 0.95rem;
+        }
+        .section-divider {
+            width: 60px; height: 3px;
+            background: linear-gradient(90deg, var(--teal), var(--gold));
+            margin: 0 auto 3rem;
+            border-radius: 2px;
+        }
+
+        /* Card Grid */
+        .card-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+        .card-grid.cols-3 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        .card-grid.cols-2 { grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); }
+
+        .card {
+            background: rgba(15, 32, 53, 0.8);
+            border: 1px solid rgba(0, 180, 216, 0.15);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(0, 180, 216, 0.4);
+            box-shadow: 0 8px 40px rgba(0, 180, 216, 0.1);
+        }
+        .card .card-icon {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            width: 50px; height: 50px;
+            display: flex; align-items: center; justify-content: center;
+            background: rgba(0, 180, 216, 0.1);
+            border-radius: 12px;
+        }
+        .card h3 {
+            font-size: 1.15rem; font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--white);
+        }
+        .card p, .card .desc {
+            font-size: 0.9rem; color: var(--gray-mid);
+            line-height: 1.6;
+        }
+        .card .tag {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+        }
+        .tag-teal { background: rgba(0,180,216,0.15); color: var(--teal); }
+        .tag-gold { background: rgba(255,183,3,0.15); color: var(--gold); }
+        .tag-emerald { background: rgba(45,198,83,0.15); color: var(--emerald); }
+
+        /* Asset Links */
+        .asset-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            margin-top: 0.5rem;
+            background: rgba(0, 180, 216, 0.05);
+            border: 1px solid rgba(0, 180, 216, 0.1);
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--white);
+            font-size: 0.85rem;
+            transition: all 0.2s;
+        }
+        .asset-link:hover {
+            background: rgba(0, 180, 216, 0.12);
+            border-color: rgba(0, 180, 216, 0.3);
+            transform: translateX(4px);
+        }
+        .asset-link .link-icon {
+            width: 32px; height: 32px;
+            background: rgba(0, 180, 216, 0.15);
+            border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+        .asset-link .link-text { flex: 1; }
+        .asset-link .link-text small { color: var(--gray-mid); display: block; font-size: 0.75rem; margin-top: 2px; }
+        .asset-link .arrow { color: var(--teal); font-size: 1rem; }
+
+        /* Stats Bar */
+        .stats-bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 900px;
+            background: rgba(15, 32, 53, 0.6);
+            border: 1px solid rgba(0, 180, 216, 0.1);
+            border-radius: 16px;
+            position: relative;
+        }
+        .stat { text-align: center; }
+        .stat .num {
+            font-size: 1.8rem; font-weight: 800;
+            background: linear-gradient(135deg, var(--teal), var(--gold));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .stat .label { font-size: 0.75rem; color: var(--gray-mid); margin-top: 0.25rem; }
+
+        /* Funnel Visual */
+        .funnel {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+        .funnel-stage {
+            padding: 1.2rem 2rem;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+            position: relative;
+            border: 1px solid;
+        }
+        .funnel-stage:nth-child(1) {
+            background: rgba(0, 180, 216, 0.1); border-color: rgba(0, 180, 216, 0.3);
+            border-radius: 12px 12px 0 0; color: var(--teal);
+        }
+        .funnel-stage:nth-child(2) {
+            background: rgba(45, 198, 83, 0.1); border-color: rgba(45, 198, 83, 0.3);
+            color: var(--emerald); margin: 0 2rem;
+        }
+        .funnel-stage:nth-child(3) {
+            background: rgba(255, 183, 3, 0.1); border-color: rgba(255, 183, 3, 0.3);
+            color: var(--gold); margin: 0 4rem;
+        }
+        .funnel-stage:nth-child(4) {
+            background: rgba(255, 107, 107, 0.1); border-color: rgba(255, 107, 107, 0.3);
+            border-radius: 0 0 12px 12px; color: #FF6B6B; margin: 0 6rem;
+        }
+        .funnel-stage small { font-weight: 400; opacity: 0.7; display: block; margin-top: 0.25rem; font-size: 0.75rem; }
+
+        /* Footer */
+        footer {
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(0, 180, 216, 0.1);
+            margin-top: 2rem;
+        }
+        footer .footer-logo {
+            font-weight: 800; font-size: 1.2rem; letter-spacing: 2px;
+            background: linear-gradient(135deg, var(--teal), var(--gold));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+        footer p { color: var(--gray-mid); font-size: 0.8rem; line-height: 1.8; }
+        footer a { color: var(--teal); text-decoration: none; }
+        footer a:hover { color: var(--gold); }
+        .disclaimer {
+            margin-top: 1.5rem; padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.7rem; color: rgba(255,255,255,0.3);
+            max-width: 600px; margin-left: auto; margin-right: auto;
+        }
+
+        @media (max-width: 768px) {
+            header { padding: 0.75rem 1rem; }
+            .section { padding: 2.5rem 1rem; }
+            .card-grid.cols-2 { grid-template-columns: 1fr; }
+            .stats-bar { gap: 1rem; }
+            .stat .num { font-size: 1.3rem; }
+            .funnel-stage:nth-child(2),
+            .funnel-stage:nth-child(3),
+            .funnel-stage:nth-child(4) { margin: 0; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">AYASS BIOSCIENCE<span>Intelligent Biology in Motion</span></div>
+    <a href="https://ayassbioscience.com" target="_blank">ayassbioscience.com</a>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="badge">META ADVERTISING CAMPAIGN</div>
+    <h1><span class="gradient">BiRAGAS</span> Meta Campaign<br>Asset Library</h1>
+    <p>Complete advertising campaign assets for the BiRAGAS Causal AI Platform — landing pages, carousel ad designs, video storyboards, and full campaign strategy documentation.</p>
+
+    <div class="stats-bar">
+        <div class="stat"><div class="num">3</div><div class="label">Landing Pages</div></div>
+        <div class="stat"><div class="num">20</div><div class="label">Ad Creatives</div></div>
+        <div class="stat"><div class="num">4</div><div class="label">Video Storyboards</div></div>
+        <div class="stat"><div class="num">4</div><div class="label">Campaign Strategies</div></div>
+        <div class="stat"><div class="num">12</div><div class="label">Week Calendar</div></div>
+    </div>
+</section>
+
+<!-- Campaign Overview -->
+<section class="section">
+    <h2 class="section-title">Full-Funnel Campaign Architecture</h2>
+    <p class="section-subtitle">4 campaigns targeting pharma, biotech, academic, and investor audiences</p>
+    <div class="section-divider"></div>
+
+    <div class="funnel">
+        <div class="funnel-stage">AWARENESS — "The Causality Problem"<small>30% budget | Reach + Video Views</small></div>
+        <div class="funnel-stage">CONSIDERATION — "The 7-Phase Engine"<small>30% budget | Traffic + Engagement</small></div>
+        <div class="funnel-stage">CONVERSION — "Partner With Us"<small>25% budget | Lead Generation</small></div>
+        <div class="funnel-stage">RETARGETING — "Proof & Validation"<small>15% budget | Re-engagement</small></div>
+    </div>
+</section>
+
+<!-- Landing Pages -->
+<section class="section">
+    <h2 class="section-title">Landing Pages</h2>
+    <p class="section-subtitle">Production-ready, responsive HTML pages with animations, forms, and glassmorphism design</p>
+    <div class="section-divider"></div>
+
+    <div class="card-grid cols-3">
+        <div class="card">
+            <div class="tag tag-teal">PRIMARY</div>
+            <h3>Main Campaign Landing Page</h3>
+            <p class="desc">Full BiRAGAS showcase — 7-phase pipeline, licensing models, therapeutic areas, social proof, animated DAG network, lead capture form.</p>
+            <a class="asset-link" href="landing-pages/biragas_main_landing.html" target="_blank">
+                <div class="link-icon">LP</div>
+                <div class="link-text">biragas_main_landing.html<small>Main campaign destination</small></div>
+                <span class="arrow">&rarr;</span>
+            </a>
+        </div>
+        <div class="card">
+            <div class="tag tag-gold">PHARMA</div>
+            <h3>Pharmaceutical Landing Page</h3>
+            <p class="desc">Enterprise-focused — pipeline de-risking, ROI messaging, security features, animated DNA helix, enterprise demo form.</p>
+            <a class="asset-link" href="landing-pages/pharma_landing.html" target="_blank">
+                <div class="link-icon">LP</div>
+                <div class="link-text">pharma_landing.html<small>Pharma audience destination</small></div>
+                <span class="arrow">&rarr;</span>
+            </a>
+        </div>
+        <div class="card">
+            <div class="tag tag-emerald">ACADEMIC</div>
+            <h3>Academic Landing Page</h3>
+            <p class="desc">Research-focused — co-publications, grant competitiveness, collaboration models, publication highlights, partnership application.</p>
+            <a class="asset-link" href="landing-pages/academic_landing.html" target="_blank">
+                <div class="link-icon">LP</div>
+                <div class="link-text">academic_landing.html<small>Academic audience destination</small></div>
+                <span class="arrow">&rarr;</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Carousel Ads -->
+<section class="section">
+    <h2 class="section-title">Carousel Ad Designs</h2>
+    <p class="section-subtitle">1080x1080px cards — open in browser and screenshot to export as PNG for Meta Ads Manager</p>
+    <div class="section-divider"></div>
+
+    <div class="card-grid cols-3">
+        <!-- Set 1 -->
+        <div class="card">
+            <div class="tag tag-teal">SET 1 &bull; 5 CARDS</div>
+            <h3>Correlation vs. Causation</h3>
+            <p class="desc">Awareness carousel — the problem, the cost, the solution, MR validation, and CTA.</p>
+            <a class="asset-link" href="carousel-ads/carousel1_card1.html" target="_blank">
+                <div class="link-icon">1</div>
+                <div class="link-text">Card 1: Your Biomarkers Are Lying<small>Problem statement</small></div>
+                <span class="arrow">&rarr;</span>
+            </a>
+            <a class="asset-link" href="carousel-ads/carousel1_card2.html" target="_blank">
+                <div class="link-icon">2</div>
+                <div class="link-text">Card 2: The $2.6B Failure Rate<small>Cost of correlation</small></div>
+                <span class="arrow">&rarr;</span>
+            </a>
+            <a class="asset-link" href="carousel-ads/carousel1_card3.html" target="_blank">
+                <div class="link-icon">3</div>
+                <div class="link-text">Card 3: 4 Layers, 9 Data Streams<small>Architecture diagram</small></div>
+                <span class="arrow">&rarr;</span>
+            </a>
+            <a class="asset-link" href="carousel-ads/carousel1_card4.html" target="_blank">
+                <div class="link-icon">4</div>
+                <div class="link-text">Card 4: 5 MR Methods<small>Validation proof</small></div>
+                <span class="arrow">&rarr;</span>
+            </a>
+            <a class="asset-link" href="carousel-ads/carousel1_card5.html" target="_blank">
+                <div class="link-icon">5</div>
+                <div class="link-text">Card 5: CTA<small>Learn More</small></div>
+                <span class="arrow">&rarr;</span>
+            </a>
+        </div>
+
+        <!-- Set 2 -->
+        <div class="card">
+            <div class="tag tag-gold">SET 2 &bull; 7 CARDS</div>
+            <h3>The 7-Phase Pipeline</h3>
+            <p class="desc">Consideration carousel — one card per phase with unique accent colors and icons.</p>
+            <a class="asset-link" href="carousel-ads/carousel2_card1.html" target="_blank">
+                <div class="link-icon">1</div>
+                <div class="link-text">Phase 1: Causality Foundation<small>DAG construction + MR</small></div>
+                <span class="arrow">&rarr;</span>
+            </a>
+            <a class="asset-link" href="carousel-ads/carousel2_card2.html" target="_blank">
+                <div class="link-icon">2</div>
+                <div class="link-text">Phase 2: Network Importance<small>Master regulators</small></div>
+                <span class="arrow">&rarr;</span>
+            </a>
+            <a class="asset-link" href="carousel-ads/carousel2_card3.html" target="_blank">
+                <div class="link-icon">3</div>
+                <div class="link-text">Phase 3: Causal Calculus<small>Hallucination detection</small></div>
+                <span class="arrow">&rarr;</span>
+            </a>
+            <a class="asset-link" href="carousel-ads/carousel2_card4.html" target="_blank">
+                <div class="link-icon">4</div>
+                <div class="link-text">Phase 4: In-Silico Perturbation<small>Graph surgery</small></div>
+                <span class="arrow">&rarr;</span>
+            </a>
+            <a class="asset-link" href="carousel-ads/carousel2_card5.html" target="_blank">
+                <div class="link-icon">5</div>
+                <div class="link-text">Phase 5: Pharma Intervention<small>Target ranking</small></div>
+                <span class="arrow">&rarr;</span>
+            </a>
+            <a class="asset-link" href="carousel-ads/carousel2_card6.html" target="_blank">
+                <div class="link-icon">6</div>
+                <div class="link-text">Phase 6: Comparative Evolution<small>Subgroup analysis</small></div>
+                <span class="arrow">&rarr;</span>
+            </a>
+            <a class="asset-link" href="carousel-ads/carousel2_card7.html" target="_blank">
+                <div class="link-icon">7</div>
+                <div class="link-text">Phase 7: Inspection & Arbitration<small>QA + reporting</small></div>
+                <span class="arrow">&rarr;</span>
+            </a>
+        </div>
+
+        <!-- Set 3 -->
+        <div class="card">
+            <div class="tag tag-emerald">SET 3 &bull; 5 CARDS</div>
+            <h3>Licensing Modules</h3>
+            <p class="desc">Conversion carousel — showcasing each licensable module.</p>
+            <a class="asset-link" href="carousel-ads/carousel3_card1.html" target="_blank">
+                <div class="link-icon">1</div>
+                <div class="link-text">Causal Engine<small>Validated causal graphs</small></div>
+                <span class="arrow">&rarr;</span>
+            </a>
+            <a class="asset-link" href="carousel-ads/carousel3_card2.html" target="_blank">
+                <div class="link-icon">2</div>
+                <div class="link-text">CRISPR Suite<small>Perturbation analysis</small></div>
+                <span class="arrow">&rarr;</span>
+            </a>
+            <a class="asset-link" href="carousel-ads/carousel3_card3.html" target="_blank">
+                <div class="link-icon">3</div>
+                <div class="link-text">Drug Agent<small>8.6M vectors</small></div>
+                <span class="arrow">&rarr;</span>
+            </a>
+            <a class="asset-link" href="carousel-ads/carousel3_card4.html" target="_blank">
+                <div class="link-icon">4</div>
+                <div class="link-text">BiRAGAS Toolkit<small>Multi-modal genomics</small></div>
+                <span class="arrow">&rarr;</span>
+            </a>
+            <a class="asset-link" href="carousel-ads/carousel3_card5.html" target="_blank">
+                <div class="link-icon">5</div>
+                <div class="link-text">Full Platform<small>Most Popular</small></div>
+                <span class="arrow">&rarr;</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Single Ads -->
+<section class="section">
+    <h2 class="section-title">Single Ad Designs</h2>
+    <p class="section-subtitle">Standalone ad creatives for feed placement</p>
+    <div class="section-divider"></div>
+
+    <div class="card-grid cols-3">
+        <div class="card">
+            <div class="tag tag-teal">1200x628</div>
+            <h3>Hallucination Detection</h3>
+            <p class="desc">5-category hallucination detection system with dual-gate visual.</p>
+            <a class="asset-link" href="carousel-ads/ad_hallucination_detection.html" target="_blank">
+                <div class="link-icon">AD</div>
+                <div class="link-text">ad_hallucination_detection.html<small>Link ad format</small></div>
+                <span class="arrow">&rarr;</span>
+            </a>
+        </div>
+        <div class="card">
+            <div class="tag tag-gold">1080x1080</div>
+            <h3>By The Numbers Infographic</h3>
+            <p class="desc">10 key BiRAGAS stats in a premium infographic layout.</p>
+            <a class="asset-link" href="carousel-ads/ad_numbers_infographic.html" target="_blank">
+                <div class="link-icon">AD</div>
+                <div class="link-text">ad_numbers_infographic.html<small>Square feed format</small></div>
+                <span class="arrow">&rarr;</span>
+            </a>
+        </div>
+        <div class="card">
+            <div class="tag tag-emerald">1080x1080</div>
+            <h3>Competitive Comparison</h3>
+            <p class="desc">Traditional Bioinformatics vs. BiRAGAS side-by-side table.</p>
+            <a class="asset-link" href="carousel-ads/ad_comparison_table.html" target="_blank">
+                <div class="link-icon">AD</div>
+                <div class="link-text">ad_comparison_table.html<small>Square feed format</small></div>
+                <span class="arrow">&rarr;</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Video Storyboards -->
+<section class="section">
+    <h2 class="section-title">Video Storyboards</h2>
+    <p class="section-subtitle">Frame-by-frame production guides with visual previews, voiceover scripts, and transition notes</p>
+    <div class="section-divider"></div>
+
+    <div class="card-grid cols-2">
+        <div class="card">
+            <div class="tag tag-teal">30 SECONDS &bull; AWARENESS</div>
+            <h3>The $2.6 Billion Question</h3>
+            <p class="desc">8-frame awareness video — hook with drug development costs, correlation vs. causation problem, BiRAGAS DAG intro, 7-phase pipeline reveal.</p>
+            <a class="asset-link" href="video-storyboards/storyboard_2.6B_question.html" target="_blank">
+                <div class="link-icon">VD</div>
+                <div class="link-text">storyboard_2.6B_question.html<small>8 frames &bull; 1080x1080 + 1080x1920</small></div>
+                <span class="arrow">&rarr;</span>
+            </a>
+        </div>
+        <div class="card">
+            <div class="tag tag-gold">45 SECONDS &bull; CONSIDERATION</div>
+            <h3>Counterfactual Surgery</h3>
+            <p class="desc">9-frame explainer — Pearl's do-calculus graph surgery, propagation with decay, resistance detection, combination targeting.</p>
+            <a class="asset-link" href="video-storyboards/storyboard_counterfactual_surgery.html" target="_blank">
+                <div class="link-icon">VD</div>
+                <div class="link-text">storyboard_counterfactual_surgery.html<small>9 frames &bull; 1080x1080 + 1080x1920</small></div>
+                <span class="arrow">&rarr;</span>
+            </a>
+        </div>
+        <div class="card">
+            <div class="tag tag-emerald">15 SECONDS &bull; INSTAGRAM REEL</div>
+            <h3>Patient-Level Precision</h3>
+            <p class="desc">4-frame vertical Reel — patient-level DAG instantiation, 30-70% unique nodes, sound-off optimized.</p>
+            <a class="asset-link" href="video-storyboards/storyboard_patient_precision_reel.html" target="_blank">
+                <div class="link-icon">VD</div>
+                <div class="link-text">storyboard_patient_precision_reel.html<small>4 frames &bull; 1080x1920 (9:16)</small></div>
+                <span class="arrow">&rarr;</span>
+            </a>
+        </div>
+        <div class="card">
+            <div class="tag tag-gold">60 SECONDS &bull; RETARGETING</div>
+            <h3>Founder Story</h3>
+            <p class="desc">8-frame founder narrative — Dr. Ayass's 15-year journey from bedside frustration to BiRAGAS operational platform.</p>
+            <a class="asset-link" href="video-storyboards/storyboard_founder_story.html" target="_blank">
+                <div class="link-icon">VD</div>
+                <div class="link-text">storyboard_founder_story.html<small>8 frames &bull; 1080x1080</small></div>
+                <span class="arrow">&rarr;</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Campaign Strategy -->
+<section class="section">
+    <h2 class="section-title">Campaign Strategy Document</h2>
+    <p class="section-subtitle">Complete campaign blueprint with audiences, budgets, KPIs, A/B tests, and 12-week calendar</p>
+    <div class="section-divider"></div>
+
+    <div class="card-grid cols-2">
+        <div class="card">
+            <div class="tag tag-teal">STRATEGY</div>
+            <h3>Full Campaign Documentation</h3>
+            <p class="desc">14-section comprehensive guide including target audience segmentation, full-funnel architecture, 16 ad sets with complete copy, budget allocation, bidding strategy, KPIs, A/B testing plan, and compliance guidelines.</p>
+            <a class="asset-link" href="campaign-strategy/BiRAGAS_Meta_Advertising_Campaign.md" target="_blank">
+                <div class="link-icon">MD</div>
+                <div class="link-text">BiRAGAS_Meta_Advertising_Campaign.md<small>Full campaign blueprint</small></div>
+                <span class="arrow">&rarr;</span>
+            </a>
+        </div>
+        <div class="card">
+            <h3>What's Inside</h3>
+            <p class="desc" style="line-height: 2;">
+                &bull; 4 audience segments with Meta targeting parameters<br>
+                &bull; 4 full-funnel campaigns (16 ad sets)<br>
+                &bull; Complete ad copy for every ad set<br>
+                &bull; $15K-$25K/month budget allocation<br>
+                &bull; KPIs & measurement framework<br>
+                &bull; 3-phase A/B testing plan<br>
+                &bull; 12-week content calendar<br>
+                &bull; 15 headline variants + 5 primary text variants<br>
+                &bull; Meta Ads Manager setup checklist<br>
+                &bull; Compliance & regulatory guidelines
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-logo">AYASS BIOSCIENCE</div>
+    <p>
+        Intelligent Biology in Motion<br>
+        8501 Wade Blvd. Bldg. 9, Frisco, TX 75034<br>
+        <a href="tel:972-668-6005">972-668-6005</a> &bull; <a href="mailto:ayassbioscience@ayassbioscience.com">ayassbioscience@ayassbioscience.com</a><br>
+        <a href="https://ayassbioscience.com" target="_blank">ayassbioscience.com</a>
+    </p>
+    <div class="disclaimer">
+        BiRAGAS is a research platform for drug discovery and biomarker development. Not intended for clinical diagnostic use.
+        Results described are based on computational analysis and require independent experimental validation.<br>
+        &copy; 2016-2026 Ayass Bioscience, LLC. All rights reserved.
+    </div>
+</footer>
+
+</body>
+</html>

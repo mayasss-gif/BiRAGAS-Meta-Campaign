@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<title>Carousel 1 - Card 2: The Cost</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px; height: 1080px;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(160deg, #0A1628 0%, #0B2540 50%, #0A2A3C 100%);
+    overflow: hidden;
+    position: relative;
+  }
+  .glow {
+    position: absolute;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.12;
+  }
+  .glow-1 { background: #00B4D8; top: -100px; right: -100px; }
+  .glow-2 { background: #FFB703; bottom: -100px; left: -100px; }
+  .content {
+    position: relative; z-index: 2;
+    width: 100%; height: 100%;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    padding: 80px;
+  }
+  .indicator {
+    position: absolute; top: 48px; right: 56px;
+    font-size: 20px; font-weight: 700;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 2px;
+  }
+  .massive-number {
+    font-size: 180px; font-weight: 900;
+    color: #FFB703;
+    line-height: 1;
+    margin-bottom: 16px;
+    letter-spacing: -4px;
+    text-shadow: 0 0 80px rgba(255,183,3,0.3);
+  }
+  .label-main {
+    font-size: 32px; font-weight: 600;
+    color: #FFFFFF;
+    margin-bottom: 48px;
+    letter-spacing: 1px;
+  }
+  .stat-bar {
+    width: 700px; height: 60px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 12px;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+    display: flex; align-items: center;
+    padding: 0 28px;
+  }
+  .stat-bar .fill {
+    position: absolute; top: 0; left: 0; bottom: 0;
+    background: linear-gradient(90deg, rgba(255,107,107,0.3), rgba(255,107,107,0.08));
+    border-radius: 12px;
+    width: 90%;
+  }
+  .stat-bar .text {
+    position: relative; z-index: 2;
+    font-size: 22px; font-weight: 700;
+    color: #FFFFFF;
+  }
+  .stat-bar .percent {
+    position: absolute; right: 28px;
+    font-size: 36px; font-weight: 900;
+    color: #FF6B6B;
+    z-index: 2;
+  }
+  .subtext {
+    font-size: 22px; font-weight: 400;
+    color: rgba(255,255,255,0.55);
+    text-align: center;
+    line-height: 1.6;
+    max-width: 720px;
+    margin-top: 40px;
+  }
+  .subtext strong { color: #00B4D8; font-weight: 600; }
+  .branding {
+    position: absolute; bottom: 48px; left: 0; right: 0;
+    text-align: center;
+  }
+  .brand-name {
+    font-size: 22px; font-weight: 800;
+    color: #FFFFFF;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .brand-tagline {
+    font-size: 14px; font-weight: 400;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .top-accent {
+    position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, #00B4D8, #FFB703, #2DC653);
+  }
+</style>
+</head>
+<body>
+<div class="top-accent"></div>
+<div class="glow glow-1"></div>
+<div class="glow glow-2"></div>
+
+<div class="content">
+  <div class="indicator">2 / 5</div>
+
+  <div class="massive-number">$2.6B</div>
+  <div class="label-main">Average cost to develop one drug</div>
+
+  <div class="stat-bar">
+    <div class="fill"></div>
+    <span class="text">Fail in clinical trials</span>
+    <span class="percent">90%</span>
+  </div>
+
+  <p class="subtext">Most targets are selected on <strong>correlational evidence</strong> that doesn't survive validation.</p>
+
+  <div class="branding">
+    <div class="brand-name">Ayass Bioscience</div>
+    <div class="brand-tagline">Intelligent Biology in Motion</div>
+  </div>
+</div>
+</body>
+</html>

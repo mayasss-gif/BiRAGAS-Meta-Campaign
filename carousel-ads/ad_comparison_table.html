@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<title>Ad - Comparison Table (1080x1080)</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px; height: 1080px;
+    font-family: 'Inter', sans-serif;
+    background: #0A1628;
+    overflow: hidden;
+    position: relative;
+  }
+  .glow {
+    position: absolute;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    background: #00B4D8;
+    filter: blur(200px);
+    opacity: 0.06;
+    top: 50%; right: -100px;
+    transform: translateY(-50%);
+  }
+  .content {
+    position: relative; z-index: 2;
+    width: 100%; height: 100%;
+    display: flex; flex-direction: column;
+    padding: 56px 60px 100px;
+  }
+  .title {
+    font-size: 44px; font-weight: 900;
+    color: #FFFFFF;
+    text-align: center;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+  }
+  .title span { color: #00B4D8; }
+  .subtitle {
+    font-size: 18px; font-weight: 400;
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+  }
+  .table-container {
+    flex: 1;
+    display: flex; flex-direction: column;
+  }
+  .table-header {
+    display: grid;
+    grid-template-columns: 260px 1fr 1fr;
+    gap: 0;
+    margin-bottom: 6px;
+  }
+  .th-empty { }
+  .th-cell {
+    padding: 18px 24px;
+    border-radius: 12px 12px 0 0;
+    text-align: center;
+    font-size: 18px; font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .th-traditional {
+    background: rgba(255,255,255,0.04);
+    color: rgba(255,255,255,0.5);
+  }
+  .th-birgas {
+    background: rgba(0,180,216,0.12);
+    color: #00B4D8;
+    border: 1px solid rgba(0,180,216,0.2);
+    border-bottom: none;
+  }
+  .table-rows {
+    display: flex; flex-direction: column;
+    gap: 4px;
+  }
+  .table-row {
+    display: grid;
+    grid-template-columns: 260px 1fr 1fr;
+    gap: 0;
+    min-height: 80px;
+  }
+  .td-label {
+    display: flex; align-items: center;
+    padding: 16px 20px;
+    font-size: 17px; font-weight: 700;
+    color: rgba(255,255,255,0.7);
+    background: rgba(255,255,255,0.02);
+    border-radius: 8px 0 0 8px;
+  }
+  .td-traditional {
+    display: flex; align-items: center; justify-content: center;
+    padding: 16px 20px;
+    font-size: 16px; font-weight: 500;
+    color: rgba(255,255,255,0.4);
+    background: rgba(255,255,255,0.02);
+    text-align: center;
+    line-height: 1.3;
+  }
+  .td-birgas {
+    display: flex; align-items: center; justify-content: center;
+    padding: 16px 20px;
+    font-size: 16px; font-weight: 600;
+    color: #FFFFFF;
+    background: rgba(0,180,216,0.06);
+    border-left: 2px solid rgba(0,180,216,0.15);
+    border-right: 1px solid rgba(0,180,216,0.1);
+    text-align: center;
+    line-height: 1.3;
+  }
+  .table-row:last-child .td-label { border-radius: 0 0 0 8px; }
+  .table-row:last-child .td-birgas { border-radius: 0 0 8px 0; }
+
+  .highlight { color: #00B4D8; font-weight: 700; }
+  .dim { opacity: 0.6; }
+  .x-mark { color: #FF6B6B; font-weight: 800; font-size: 20px; margin-right: 6px; }
+  .check-mark { color: #2DC653; font-weight: 800; font-size: 20px; margin-right: 6px; }
+
+  .branding {
+    position: absolute; bottom: 40px; left: 0; right: 0;
+    text-align: center;
+  }
+  .brand-name {
+    font-size: 22px; font-weight: 800;
+    color: #FFFFFF;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .brand-tagline {
+    font-size: 14px; font-weight: 400;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .top-accent {
+    position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, #00B4D8, #FFB703, #2DC653);
+  }
+</style>
+</head>
+<body>
+<div class="top-accent"></div>
+<div class="glow"></div>
+
+<div class="content">
+  <h1 class="title"><span>Gene Lists</span> vs. <span>Causal Graphs</span></h1>
+  <p class="subtitle">Traditional Bioinformatics vs. BiRAGAS</p>
+
+  <div class="table-container">
+    <div class="table-header">
+      <div class="th-empty"></div>
+      <div class="th-cell th-traditional">Traditional</div>
+      <div class="th-cell th-birgas">BiRAGAS</div>
+    </div>
+
+    <div class="table-rows">
+      <div class="table-row">
+        <div class="td-label">Output Type</div>
+        <div class="td-traditional"><span class="dim">Gene lists &amp; p-values</span></div>
+        <div class="td-birgas"><span class="highlight">Causal DAGs with confidence scores</span></div>
+      </div>
+
+      <div class="table-row">
+        <div class="td-label">Evidence Integration</div>
+        <div class="td-traditional"><span class="dim">Single data type</span></div>
+        <div class="td-birgas"><span class="highlight">9 heterogeneous streams</span></div>
+      </div>
+
+      <div class="table-row">
+        <div class="td-label">Direction of Effect</div>
+        <div class="td-traditional"><span class="x-mark">&#10005;</span> <span class="dim">Undirected associations</span></div>
+        <div class="td-birgas"><span class="check-mark">&#10003;</span> <span class="highlight">MR-validated directionality</span></div>
+      </div>
+
+      <div class="table-row">
+        <div class="td-label">Hallucination Detection</div>
+        <div class="td-traditional"><span class="x-mark">&#10005;</span> <span class="dim">Not addressed</span></div>
+        <div class="td-birgas"><span class="check-mark">&#10003;</span> <span class="highlight">5-category detection</span></div>
+      </div>
+
+      <div class="table-row">
+        <div class="td-label">Patient Specificity</div>
+        <div class="td-traditional"><span class="dim">Population-level only</span></div>
+        <div class="td-birgas"><span class="highlight">3 levels incl. patient DAGs</span></div>
+      </div>
+
+      <div class="table-row">
+        <div class="td-label">Target Validation</div>
+        <div class="td-traditional"><span class="dim">Manual literature review</span></div>
+        <div class="td-birgas"><span class="highlight">Automated do-calculus surgery</span></div>
+      </div>
+
+      <div class="table-row">
+        <div class="td-label">Regulatory Readiness</div>
+        <div class="td-traditional"><span class="x-mark">&#10005;</span> <span class="dim">Supplementary evidence</span></div>
+        <div class="td-birgas"><span class="check-mark">&#10003;</span> <span class="highlight">Submission-grade audit trail</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="branding">
+    <div class="brand-name">Ayass Bioscience</div>
+    <div class="brand-tagline">Intelligent Biology in Motion</div>
+  </div>
+</div>
+</body>
+</html>

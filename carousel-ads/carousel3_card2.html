@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<title>Carousel 3 - Card 2: CRISPR Suite</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px; height: 1080px;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(160deg, #0A1628 0%, #0B2540 60%, #0A2A3C 100%);
+    overflow: hidden;
+    position: relative;
+  }
+  .accent-glow {
+    position: absolute;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    background: #2DC653;
+    filter: blur(180px);
+    opacity: 0.08;
+    top: -100px; right: -100px;
+  }
+  .content {
+    position: relative; z-index: 2;
+    width: 100%; height: 100%;
+    display: flex; flex-direction: column;
+    align-items: center;
+    padding: 70px 80px 120px;
+  }
+  .top-bar {
+    display: flex; justify-content: space-between; align-items: center;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .module-label {
+    font-size: 15px; font-weight: 700;
+    color: #2DC653;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+  }
+  .indicator {
+    font-size: 20px; font-weight: 700;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 2px;
+  }
+  .icon-container {
+    width: 120px; height: 120px;
+    border-radius: 28px;
+    background: rgba(45,198,83,0.08);
+    border: 2px solid rgba(45,198,83,0.2);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 40px;
+  }
+  .module-name {
+    font-size: 56px; font-weight: 900;
+    color: #FFFFFF;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  .module-sub {
+    font-size: 20px; font-weight: 400;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 60px;
+  }
+  .features {
+    list-style: none;
+    width: 100%;
+    max-width: 700px;
+  }
+  .features li {
+    display: flex; align-items: center;
+    padding: 22px 28px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 14px;
+    margin-bottom: 14px;
+    font-size: 24px; font-weight: 500;
+    color: rgba(255,255,255,0.85);
+  }
+  .feature-icon {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #2DC653;
+    margin-right: 20px;
+    flex-shrink: 0;
+  }
+  .cta-bottom {
+    margin-top: auto;
+    font-size: 18px; font-weight: 600;
+    color: #2DC653;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .branding {
+    position: absolute; bottom: 40px; left: 0; right: 0;
+    text-align: center;
+  }
+  .brand-name {
+    font-size: 20px; font-weight: 800;
+    color: #FFFFFF;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .brand-tagline {
+    font-size: 13px; font-weight: 400;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .top-accent {
+    position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, #2DC653, #00B4D8);
+  }
+</style>
+</head>
+<body>
+<div class="top-accent"></div>
+<div class="accent-glow"></div>
+
+<div class="content">
+  <div class="top-bar">
+    <span class="module-label">Licensing Module</span>
+    <span class="indicator">2 / 5</span>
+  </div>
+
+  <div class="icon-container">
+    <svg width="60" height="60" viewBox="0 0 60 60">
+      <!-- DNA scissors / CRISPR icon -->
+      <path d="M10 10 Q 30 30, 50 10" fill="none" stroke="#2DC653" stroke-width="2.5"/>
+      <path d="M10 20 Q 30 40, 50 20" fill="none" stroke="#2DC653" stroke-width="2.5"/>
+      <!-- Cut lines -->
+      <line x1="28" y1="25" x2="22" y2="45" stroke="#2DC653" stroke-width="2" stroke-linecap="round"/>
+      <line x1="32" y1="25" x2="38" y2="45" stroke="#2DC653" stroke-width="2" stroke-linecap="round"/>
+      <!-- Handles -->
+      <circle cx="20" cy="48" r="5" fill="none" stroke="#2DC653" stroke-width="1.5"/>
+      <circle cx="40" cy="48" r="5" fill="none" stroke="#2DC653" stroke-width="1.5"/>
+      <!-- Rungs -->
+      <line x1="18" y1="13" x2="18" y2="18" stroke="#2DC653" stroke-width="1.5"/>
+      <line x1="26" y1="17" x2="26" y2="24" stroke="#2DC653" stroke-width="1.5"/>
+      <line x1="34" y1="17" x2="34" y2="24" stroke="#2DC653" stroke-width="1.5"/>
+      <line x1="42" y1="13" x2="42" y2="18" stroke="#2DC653" stroke-width="1.5"/>
+    </svg>
+  </div>
+
+  <h1 class="module-name">CRISPR Suite</h1>
+  <p class="module-sub">Perturbation &amp; Validation Engine</p>
+
+  <ul class="features">
+    <li><span class="feature-icon"></span>Perturbation validation</li>
+    <li><span class="feature-icon"></span>Genome-wide screening</li>
+    <li><span class="feature-icon"></span>Targeted editing characterization</li>
+    <li><span class="feature-icon"></span>End-to-end analysis</li>
+  </ul>
+
+  <div class="cta-bottom">Contact for Pricing</div>
+
+  <div class="branding">
+    <div class="brand-name">Ayass Bioscience</div>
+    <div class="brand-tagline">Intelligent Biology in Motion</div>
+  </div>
+</div>
+</body>
+</html>

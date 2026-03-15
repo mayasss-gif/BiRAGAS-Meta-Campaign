@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<title>Carousel 2 - Card 2: Phase 2 Network Importance</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px; height: 1080px;
+    font-family: 'Inter', sans-serif;
+    background: #0A1628;
+    overflow: hidden;
+    position: relative;
+  }
+  .phase-bg {
+    position: absolute; top: -40px; right: -40px;
+    font-size: 360px; font-weight: 900;
+    color: rgba(45,198,83,0.04);
+    line-height: 1;
+  }
+  .accent-glow {
+    position: absolute;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: #2DC653;
+    filter: blur(160px);
+    opacity: 0.1;
+    bottom: -100px; left: -100px;
+  }
+  .content {
+    position: relative; z-index: 2;
+    width: 100%; height: 100%;
+    display: flex; flex-direction: column;
+    padding: 60px 80px 100px;
+  }
+  .top-bar {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 40px;
+  }
+  .phase-label {
+    font-size: 16px; font-weight: 700;
+    color: #2DC653;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+  }
+  .indicator {
+    font-size: 20px; font-weight: 700;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 2px;
+  }
+  .phase-number {
+    font-size: 100px; font-weight: 900;
+    color: #2DC653;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .phase-name {
+    font-size: 52px; font-weight: 900;
+    color: #FFFFFF;
+    line-height: 1.1;
+    margin-bottom: 50px;
+  }
+  .icon-container {
+    width: 100px; height: 100px;
+    margin-bottom: 40px;
+  }
+  .bullets {
+    list-style: none;
+    flex: 1;
+  }
+  .bullets li {
+    display: flex; align-items: center;
+    font-size: 24px; font-weight: 500;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 24px;
+  }
+  .bullet-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: #2DC653;
+    margin-right: 20px;
+    flex-shrink: 0;
+  }
+  .branding {
+    position: absolute; bottom: 40px; left: 0; right: 0;
+    text-align: center;
+  }
+  .brand-name {
+    font-size: 20px; font-weight: 800;
+    color: #FFFFFF;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .brand-tagline {
+    font-size: 13px; font-weight: 400;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .top-accent {
+    position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: #2DC653;
+  }
+  .side-accent {
+    position: absolute; left: 0; top: 0; bottom: 0; width: 5px;
+    background: linear-gradient(180deg, #2DC653, transparent);
+  }
+</style>
+</head>
+<body>
+<div class="top-accent"></div>
+<div class="side-accent"></div>
+<div class="phase-bg">02</div>
+<div class="accent-glow"></div>
+
+<div class="content">
+  <div class="top-bar">
+    <span class="phase-label">Phase 2 of 7</span>
+    <span class="indicator">2 / 7</span>
+  </div>
+
+  <div class="phase-number">02</div>
+  <h1 class="phase-name">Network<br>Importance</h1>
+
+  <div class="icon-container">
+    <svg width="100" height="100" viewBox="0 0 100 100">
+      <!-- Hub node with radiating connections -->
+      <circle cx="50" cy="50" r="16" fill="rgba(45,198,83,0.2)" stroke="#2DC653" stroke-width="2.5"/>
+      <circle cx="50" cy="50" r="6" fill="#2DC653"/>
+      <circle cx="15" cy="20" r="6" fill="none" stroke="#2DC653" stroke-width="1.5"/>
+      <circle cx="85" cy="20" r="6" fill="none" stroke="#2DC653" stroke-width="1.5"/>
+      <circle cx="15" cy="80" r="6" fill="none" stroke="#2DC653" stroke-width="1.5"/>
+      <circle cx="85" cy="80" r="6" fill="none" stroke="#2DC653" stroke-width="1.5"/>
+      <circle cx="50" cy="8" r="5" fill="none" stroke="#2DC653" stroke-width="1.5"/>
+      <circle cx="50" cy="92" r="5" fill="none" stroke="#2DC653" stroke-width="1.5"/>
+      <circle cx="8" cy="50" r="5" fill="none" stroke="#2DC653" stroke-width="1.5"/>
+      <circle cx="92" cy="50" r="5" fill="none" stroke="#2DC653" stroke-width="1.5"/>
+      <line x1="38" y1="42" x2="20" y2="25" stroke="#2DC653" stroke-width="1.2"/>
+      <line x1="62" y1="42" x2="80" y2="25" stroke="#2DC653" stroke-width="1.2"/>
+      <line x1="38" y1="58" x2="20" y2="75" stroke="#2DC653" stroke-width="1.2"/>
+      <line x1="62" y1="58" x2="80" y2="75" stroke="#2DC653" stroke-width="1.2"/>
+      <line x1="50" y1="34" x2="50" y2="13" stroke="#2DC653" stroke-width="1.2"/>
+      <line x1="50" y1="66" x2="50" y2="87" stroke="#2DC653" stroke-width="1.2"/>
+      <line x1="34" y1="50" x2="13" y2="50" stroke="#2DC653" stroke-width="1.2"/>
+      <line x1="66" y1="50" x2="87" y2="50" stroke="#2DC653" stroke-width="1.2"/>
+    </svg>
+  </div>
+
+  <ul class="bullets">
+    <li><span class="bullet-dot"></span>5-stage centrality pipeline</li>
+    <li><span class="bullet-dot"></span>3-tier gene classification</li>
+    <li><span class="bullet-dot"></span>Reverse PageRank from disease</li>
+    <li><span class="bullet-dot"></span>5-dimension target scoring</li>
+  </ul>
+
+  <div class="branding">
+    <div class="brand-name">Ayass Bioscience</div>
+    <div class="brand-tagline">Intelligent Biology in Motion</div>
+  </div>
+</div>
+</body>
+</html>

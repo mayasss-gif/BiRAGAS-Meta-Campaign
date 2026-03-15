@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Storyboard: Patient-Level Precision (Instagram Reel) | Ayass Bioscience</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0A1628;
+  --teal: #00B4D8;
+  --white: #FFFFFF;
+  --gold: #FFB703;
+  --red: #E63946;
+  --green: #2A9D8F;
+  --gray-100: #F8F9FA;
+  --gray-200: #E9ECEF;
+  --gray-300: #DEE2E6;
+  --gray-500: #6C757D;
+  --gray-700: #495057;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--gray-100);
+  color: var(--navy);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+.cover {
+  background: linear-gradient(135deg, var(--navy) 0%, #162040 60%, #0d3545 100%);
+  border-radius: 16px;
+  padding: 60px 48px;
+  color: var(--white);
+  margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cover::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -15%;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(255,183,3,0.1) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.cover-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+.cover h1 {
+  font-size: 44px;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+
+.cover h1 span { color: var(--gold); }
+
+.cover .subtitle {
+  font-size: 20px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 32px;
+}
+
+.cover-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.meta-item {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.meta-item .label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 4px;
+}
+
+.meta-item .value {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.production-notes {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 12px;
+  padding: 32px;
+  margin-bottom: 40px;
+}
+
+.production-notes h2 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.production-notes h2::before {
+  content: '';
+  width: 4px;
+  height: 20px;
+  background: var(--gold);
+  border-radius: 2px;
+}
+
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.note-card {
+  background: var(--gray-100);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.note-card .note-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  margin-bottom: 6px;
+}
+
+.note-card .note-value {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.color-swatches {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.swatch {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid var(--white);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.timeline-bar {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 12px;
+  padding: 24px 32px;
+  margin-bottom: 40px;
+}
+
+.timeline-bar h2 {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  margin-bottom: 16px;
+}
+
+.timeline-track {
+  display: flex;
+  height: 48px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--gray-200);
+}
+
+.timeline-segment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.frames-section h2 {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 24px;
+}
+
+.frame-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 32px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  page-break-inside: avoid;
+}
+
+.frame-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background: var(--navy);
+  color: var(--white);
+}
+
+.frame-number {
+  font-size: 14px;
+  font-weight: 800;
+  background: var(--gold);
+  color: var(--navy);
+  padding: 4px 14px;
+  border-radius: 20px;
+}
+
+.frame-title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.frame-time {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gold);
+  background: rgba(255,183,3,0.15);
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.frame-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+/* For Reels, show the visual in 9:16 portrait aspect ratio preview */
+.frame-visual {
+  background: #0d1b2a;
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.frame-visual::before {
+  content: '9:16';
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 9px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.05);
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: 1px;
+}
+
+.frame-details {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.detail-block {
+  border-left: 3px solid var(--gray-200);
+  padding-left: 14px;
+}
+
+.detail-block.vo { border-color: var(--teal); }
+.detail-block.onscreen { border-color: var(--gold); }
+.detail-block.visual-desc { border-color: var(--green); }
+.detail-block.transition { border-color: var(--red); }
+.detail-block.music { border-color: var(--gray-500); }
+
+.detail-label {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.detail-block.vo .detail-label { color: var(--teal); }
+.detail-block.onscreen .detail-label { color: var(--gold); }
+.detail-block.visual-desc .detail-label { color: var(--green); }
+.detail-block.transition .detail-label { color: var(--red); }
+.detail-block.music .detail-label { color: var(--gray-500); }
+
+.detail-text {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--gray-700);
+}
+
+.detail-text em {
+  font-style: italic;
+  color: var(--gray-500);
+}
+
+.summary {
+  background: linear-gradient(135deg, var(--navy) 0%, #1a2a4a 100%);
+  border-radius: 16px;
+  padding: 48px;
+  color: var(--white);
+  margin-top: 40px;
+}
+
+.summary h2 {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 24px;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.key-messages h3, .cta-section h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--teal);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.key-messages ul {
+  list-style: none;
+  padding: 0;
+}
+
+.key-messages li {
+  padding: 8px 0;
+  padding-left: 20px;
+  position: relative;
+  font-size: 14px;
+  color: rgba(255,255,255,0.85);
+}
+
+.key-messages li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 14px;
+  width: 8px;
+  height: 8px;
+  background: var(--gold);
+  border-radius: 50%;
+}
+
+.cta-box {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+}
+
+.cta-box .cta-url {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--gold);
+  margin-top: 8px;
+}
+
+.cta-box .cta-action {
+  display: inline-block;
+  margin-top: 12px;
+  background: var(--teal);
+  color: var(--navy);
+  font-weight: 700;
+  padding: 10px 28px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+/* Reel-specific word animation */
+.word-anim {
+  text-align: center;
+  padding: 20px;
+}
+
+.word-anim .word {
+  display: inline-block;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--white);
+  margin: 4px 6px;
+  opacity: 0.9;
+}
+
+.word-anim .word.highlight {
+  color: var(--gold);
+}
+
+/* Mini DAG styles */
+.mini-dag-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  width: 100%;
+  max-width: 280px;
+}
+
+.mini-dag {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 8px;
+  text-align: center;
+}
+
+.mini-dag-label {
+  font-size: 8px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 4px;
+  letter-spacing: 0.5px;
+}
+
+.skeleton-dag {
+  grid-column: 1 / -1;
+  background: rgba(0,180,216,0.08);
+  border-color: rgba(0,180,216,0.2);
+}
+
+@media (max-width: 768px) {
+  .frame-body { grid-template-columns: 1fr; }
+  .frame-visual { min-height: 300px; }
+  .cover h1 { font-size: 30px; }
+  .cover-meta { grid-template-columns: 1fr 1fr; }
+  .summary-grid { grid-template-columns: 1fr; }
+}
+
+@media print {
+  body { background: white; }
+  .container { padding: 0; max-width: 100%; }
+  .cover, .frame-header, .frame-visual, .summary, .timeline-track, .timeline-segment, .swatch {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .cover { border-radius: 0; padding: 40px; }
+  .frame-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    margin-bottom: 20px;
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+  .frame-visual { min-height: 280px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- COVER -->
+  <section class="cover">
+    <div class="cover-label">Instagram Reel Storyboard</div>
+    <h1>Patient-Level <span>Precision</span></h1>
+    <div class="subtitle">15-Second Instagram Reel &mdash; Ayass Bioscience / BiRAGAS Platform</div>
+    <div class="cover-meta">
+      <div class="meta-item">
+        <div class="label">Duration</div>
+        <div class="value">15 seconds</div>
+      </div>
+      <div class="meta-item">
+        <div class="label">Format</div>
+        <div class="value">MP4 (Reel)</div>
+      </div>
+      <div class="meta-item">
+        <div class="label">Aspect Ratio</div>
+        <div class="value">9:16 (vertical)</div>
+      </div>
+      <div class="meta-item">
+        <div class="label">Target Audience</div>
+        <div class="value">Biotech community, science-forward professionals</div>
+      </div>
+      <div class="meta-item">
+        <div class="label">Funnel Stage</div>
+        <div class="value">Top of Funnel &mdash; Awareness</div>
+      </div>
+      <div class="meta-item">
+        <div class="label">Platforms</div>
+        <div class="value">Instagram, TikTok, YouTube Shorts</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTION NOTES -->
+  <section class="production-notes">
+    <h2>Production Notes</h2>
+    <div class="notes-grid">
+      <div class="note-card">
+        <div class="note-label">Music Style</div>
+        <div class="note-value">Trending electronic beat, snappy. Match to Reel audio trends. 120+ BPM.</div>
+      </div>
+      <div class="note-card">
+        <div class="note-label">Pacing</div>
+        <div class="note-value">Fast, punchy. Text-driven format. Every second counts. Designed for scroll-stop.</div>
+      </div>
+      <div class="note-card">
+        <div class="note-label">VO Style</div>
+        <div class="note-value">Minimal VO &mdash; primarily text-driven for sound-off viewing. One VO line in Frame 3.</div>
+      </div>
+      <div class="note-card">
+        <div class="note-label">Animation Style</div>
+        <div class="note-value">Bold typography animations. Quick node/graph animations. High contrast for mobile screens.</div>
+      </div>
+      <div class="note-card">
+        <div class="note-label">Color Palette</div>
+        <div class="note-value">
+          High-contrast for mobile:
+          <div class="color-swatches">
+            <div class="swatch" style="background:#0A1628;" title="Navy"></div>
+            <div class="swatch" style="background:#00B4D8;" title="Teal"></div>
+            <div class="swatch" style="background:#FFB703;" title="Gold"></div>
+            <div class="swatch" style="background:#FFFFFF;border-color:#ddd;" title="White"></div>
+          </div>
+        </div>
+      </div>
+      <div class="note-card">
+        <div class="note-label">Key Requirement</div>
+        <div class="note-value">Must work with sound off. All critical info is on-screen text. Captions embedded.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="timeline-bar">
+    <h2>Reel Timeline (15s)</h2>
+    <div class="timeline-track">
+      <div class="timeline-segment" style="flex:3;background:var(--navy);">0-3s Hook</div>
+      <div class="timeline-segment" style="flex:4;background:var(--teal);">3-7s DAGs</div>
+      <div class="timeline-segment" style="flex:4;background:var(--gold);color:var(--navy);">7-11s Stat</div>
+      <div class="timeline-segment" style="flex:4;background:var(--navy);">11-15s CTA</div>
+    </div>
+  </section>
+
+  <!-- FRAMES -->
+  <section class="frames-section">
+    <h2>Frame-by-Frame Storyboard</h2>
+
+    <!-- FRAME 1 -->
+    <div class="frame-card">
+      <div class="frame-header">
+        <span class="frame-number">F1</span>
+        <span class="frame-title">Hook</span>
+        <span class="frame-time">0:00 &ndash; 0:03</span>
+      </div>
+      <div class="frame-body">
+        <div class="frame-visual">
+          <div class="word-anim">
+            <span class="word">What</span>
+            <span class="word">if</span>
+            <span class="word highlight">every</span>
+            <span class="word highlight">patient</span>
+            <span class="word">had</span>
+            <span class="word">their</span>
+            <span class="word">own</span>
+            <span class="word highlight">causal</span>
+            <span class="word highlight">map?</span>
+          </div>
+        </div>
+        <div class="frame-details">
+          <div class="detail-block vo">
+            <div class="detail-label">Voiceover</div>
+            <div class="detail-text">"What if every patient had their own causal map?"</div>
+          </div>
+          <div class="detail-block onscreen">
+            <div class="detail-label">On-Screen Text</div>
+            <div class="detail-text">"What if every patient had their own causal map?"</div>
+          </div>
+          <div class="detail-block visual-desc">
+            <div class="detail-label">Visual Description</div>
+            <div class="detail-text">Bold text on navy background. Words appear one at a time with kinetic typography animation. "every patient" and "causal map" highlighted in gold. Designed to stop the scroll.</div>
+          </div>
+          <div class="detail-block transition">
+            <div class="detail-label">Transition</div>
+            <div class="detail-text">Quick word-by-word animation, then smash cut to Frame 2</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FRAME 2 -->
+    <div class="frame-card">
+      <div class="frame-header">
+        <span class="frame-number">F2</span>
+        <span class="frame-title">Skeleton to Patient DAGs</span>
+        <span class="frame-time">0:03 &ndash; 0:07</span>
+      </div>
+      <div class="frame-body">
+        <div class="frame-visual">
+          <div style="width:100%;max-width:280px;">
+            <!-- Skeleton DAG (center top) -->
+            <div style="text-align:center;margin-bottom:16px;">
+              <div style="font-size:9px;font-weight:700;color:var(--teal);letter-spacing:2px;margin-bottom:6px;">SKELETON DAG</div>
+              <svg viewBox="0 0 180 60" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:160px;">
+                <circle cx="30" cy="12" r="7" fill="#00B4D8" opacity="0.8"/>
+                <circle cx="70" cy="12" r="7" fill="#00B4D8" opacity="0.8"/>
+                <circle cx="110" cy="12" r="7" fill="#00B4D8" opacity="0.8"/>
+                <circle cx="150" cy="12" r="7" fill="#00B4D8" opacity="0.8"/>
+                <circle cx="50" cy="35" r="7" fill="#FFB703" opacity="0.8"/>
+                <circle cx="90" cy="35" r="7" fill="#FFB703" opacity="0.8"/>
+                <circle cx="130" cy="35" r="7" fill="#FFB703" opacity="0.8"/>
+                <circle cx="90" cy="55" r="7" fill="#fff" opacity="0.8"/>
+                <line x1="35" y1="18" x2="45" y2="29" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+                <line x1="65" y1="18" x2="55" y2="29" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+                <line x1="75" y1="18" x2="85" y2="29" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+                <line x1="105" y1="18" x2="95" y2="29" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+                <line x1="115" y1="18" x2="125" y2="29" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+                <line x1="145" y1="18" x2="135" y2="29" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+                <line x1="55" y1="41" x2="85" y2="49" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+                <line x1="85" y1="41" x2="88" y2="48" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+                <line x1="125" y1="41" x2="95" y2="49" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+              </svg>
+            </div>
+            <!-- Arrow down -->
+            <div style="text-align:center;color:rgba(255,255,255,0.3);font-size:20px;margin:4px 0;">&#8595; &#8595; &#8595;</div>
+            <!-- Patient DAGs grid -->
+            <div class="mini-dag-grid">
+              <div class="mini-dag">
+                <div class="mini-dag-label">Patient 1</div>
+                <svg viewBox="0 0 60 40" style="width:100%;max-width:50px;">
+                  <circle cx="15" cy="8" r="5" fill="#00B4D8" opacity="0.9"/>
+                  <circle cx="45" cy="8" r="5" fill="#00B4D8" opacity="0.3"/>
+                  <circle cx="30" cy="25" r="5" fill="#FFB703" opacity="0.9"/>
+                  <circle cx="30" cy="38" r="4" fill="#fff" opacity="0.8"/>
+                  <line x1="18" y1="12" x2="27" y2="21" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+                  <line x1="30" y1="30" x2="30" y2="34" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+                </svg>
+              </div>
+              <div class="mini-dag">
+                <div class="mini-dag-label">Patient 2</div>
+                <svg viewBox="0 0 60 40" style="width:100%;max-width:50px;">
+                  <circle cx="15" cy="8" r="5" fill="#00B4D8" opacity="0.3"/>
+                  <circle cx="45" cy="8" r="5" fill="#00B4D8" opacity="0.9"/>
+                  <circle cx="15" cy="25" r="5" fill="#FFB703" opacity="0.9"/>
+                  <circle cx="45" cy="25" r="5" fill="#FFB703" opacity="0.9"/>
+                  <circle cx="30" cy="38" r="4" fill="#fff" opacity="0.8"/>
+                  <line x1="42" y1="12" x2="18" y2="21" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+                  <line x1="45" y1="13" x2="45" y2="20" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+                  <line x1="20" y1="30" x2="27" y2="35" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+                  <line x1="40" y1="30" x2="33" y2="35" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+                </svg>
+              </div>
+              <div class="mini-dag">
+                <div class="mini-dag-label">Patient 3</div>
+                <svg viewBox="0 0 60 40" style="width:100%;max-width:50px;">
+                  <circle cx="30" cy="8" r="5" fill="#00B4D8" opacity="0.9"/>
+                  <circle cx="15" cy="25" r="5" fill="#FFB703" opacity="0.5"/>
+                  <circle cx="45" cy="25" r="5" fill="#FFB703" opacity="0.9"/>
+                  <circle cx="30" cy="38" r="4" fill="#fff" opacity="0.8"/>
+                  <line x1="27" y1="12" x2="18" y2="21" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+                  <line x1="33" y1="12" x2="42" y2="21" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+                  <line x1="40" y1="30" x2="33" y2="35" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+                </svg>
+              </div>
+              <div class="mini-dag">
+                <div class="mini-dag-label">Patient 4</div>
+                <svg viewBox="0 0 60 40" style="width:100%;max-width:50px;">
+                  <circle cx="15" cy="8" r="5" fill="#00B4D8" opacity="0.9"/>
+                  <circle cx="45" cy="8" r="5" fill="#00B4D8" opacity="0.9"/>
+                  <circle cx="30" cy="25" r="5" fill="#FFB703" opacity="0.4"/>
+                  <circle cx="30" cy="38" r="4" fill="#fff" opacity="0.9"/>
+                  <line x1="18" y1="12" x2="27" y2="21" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+                  <line x1="42" y1="12" x2="33" y2="21" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+                  <line x1="30" y1="30" x2="30" y2="34" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+                </svg>
+              </div>
+              <div class="mini-dag">
+                <div class="mini-dag-label">Patient 5</div>
+                <svg viewBox="0 0 60 40" style="width:100%;max-width:50px;">
+                  <circle cx="15" cy="8" r="5" fill="#00B4D8" opacity="0.9"/>
+                  <circle cx="45" cy="8" r="5" fill="#00B4D8" opacity="0.3"/>
+                  <circle cx="15" cy="25" r="5" fill="#FFB703" opacity="0.9"/>
+                  <circle cx="45" cy="25" r="5" fill="#FFB703" opacity="0.3"/>
+                  <circle cx="30" cy="38" r="4" fill="#fff" opacity="0.7"/>
+                  <line x1="15" y1="13" x2="15" y2="20" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+                  <line x1="18" y1="30" x2="27" y2="35" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+                </svg>
+              </div>
+              <div class="mini-dag">
+                <div class="mini-dag-label">Patient 6</div>
+                <svg viewBox="0 0 60 40" style="width:100%;max-width:50px;">
+                  <circle cx="15" cy="8" r="5" fill="#00B4D8" opacity="0.5"/>
+                  <circle cx="45" cy="8" r="5" fill="#00B4D8" opacity="0.9"/>
+                  <circle cx="30" cy="25" r="5" fill="#FFB703" opacity="0.9"/>
+                  <circle cx="30" cy="38" r="4" fill="#fff" opacity="0.9"/>
+                  <line x1="42" y1="12" x2="33" y2="21" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+                  <line x1="30" y1="30" x2="30" y2="34" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+                </svg>
+              </div>
+            </div>
+            <div style="text-align:center;margin-top:12px;font-size:10px;font-weight:700;color:var(--teal);letter-spacing:1px;">PATIENT-LEVEL DAG INSTANTIATION</div>
+          </div>
+        </div>
+        <div class="frame-details">
+          <div class="detail-block vo">
+            <div class="detail-label">Voiceover</div>
+            <div class="detail-text"><em>None &mdash; text-driven for Reel format</em></div>
+          </div>
+          <div class="detail-block onscreen">
+            <div class="detail-label">On-Screen Text</div>
+            <div class="detail-text">"Patient-Level DAG Instantiation"</div>
+          </div>
+          <div class="detail-block visual-desc">
+            <div class="detail-label">Visual Description</div>
+            <div class="detail-text">One large "skeleton" DAG in center multiplies/branches into 6 smaller, unique DAGs &mdash; each with different nodes active (some highlighted, some grayed out). Each labeled "Patient 1" through "Patient 6". Shows visual diversity of individual biology.</div>
+          </div>
+          <div class="detail-block transition">
+            <div class="detail-label">Transition</div>
+            <div class="detail-text">Branching animation &mdash; skeleton DAG splits into individuals</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FRAME 3 -->
+    <div class="frame-card">
+      <div class="frame-header">
+        <span class="frame-number">F3</span>
+        <span class="frame-title">The Stat</span>
+        <span class="frame-time">0:07 &ndash; 0:11</span>
+      </div>
+      <div class="frame-body">
+        <div class="frame-visual">
+          <div style="text-align:center;">
+            <div style="font-size:72px;font-weight:900;color:var(--gold);line-height:1;text-shadow:0 0 60px rgba(255,183,3,0.3);">30-70%</div>
+            <div style="font-size:15px;font-weight:500;color:rgba(255,255,255,0.7);margin-top:12px;max-width:220px;">of nodes are unique per patient</div>
+          </div>
+        </div>
+        <div class="frame-details">
+          <div class="detail-block vo">
+            <div class="detail-label">Voiceover</div>
+            <div class="detail-text">"BiRAGAS builds individual causal graphs &mdash; because biology isn't one-size-fits-all."</div>
+          </div>
+          <div class="detail-block onscreen">
+            <div class="detail-label">On-Screen Text</div>
+            <div class="detail-text">"30-70% of nodes are unique per patient"</div>
+          </div>
+          <div class="detail-block visual-desc">
+            <div class="detail-label">Visual Description</div>
+            <div class="detail-text">Large "30-70%" appears with scale-up animation in gold. Below: "of nodes are unique per patient" in white. Powerful stat that drives home the precision medicine message.</div>
+          </div>
+          <div class="detail-block transition">
+            <div class="detail-label">Transition</div>
+            <div class="detail-text">Scale up with glow effect</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FRAME 4 -->
+    <div class="frame-card">
+      <div class="frame-header">
+        <span class="frame-number">F4</span>
+        <span class="frame-title">CTA</span>
+        <span class="frame-time">0:11 &ndash; 0:15</span>
+      </div>
+      <div class="frame-body">
+        <div class="frame-visual">
+          <div style="text-align:center;">
+            <div style="font-size:22px;font-weight:900;letter-spacing:3px;color:var(--white);margin-bottom:8px;">AYASS BIOSCIENCE</div>
+            <div style="font-size:14px;color:rgba(255,255,255,0.6);margin-bottom:20px;">ayassbioscience.com</div>
+            <div style="display:inline-block;background:var(--teal);color:var(--navy);font-weight:700;font-size:14px;padding:10px 28px;border-radius:8px;margin-bottom:16px;">Learn More</div>
+            <div style="color:rgba(255,255,255,0.3);font-size:24px;margin-top:8px;">&#8593;</div>
+            <div style="color:rgba(255,255,255,0.3);font-size:10px;font-weight:600;letter-spacing:1px;">SWIPE UP</div>
+          </div>
+        </div>
+        <div class="frame-details">
+          <div class="detail-block vo">
+            <div class="detail-label">Voiceover</div>
+            <div class="detail-text"><em>None</em></div>
+          </div>
+          <div class="detail-block onscreen">
+            <div class="detail-label">On-Screen Text</div>
+            <div class="detail-text">"AYASS BIOSCIENCE" / "ayassbioscience.com" / "Learn More" with upward swipe arrow</div>
+          </div>
+          <div class="detail-block visual-desc">
+            <div class="detail-label">Visual Description</div>
+            <div class="detail-text">Ayass Bioscience logo, website URL, "Learn More" CTA with upward swipe arrow. Native Reel CTA format. Clean, easy to act on.</div>
+          </div>
+          <div class="detail-block transition">
+            <div class="detail-label">Transition</div>
+            <div class="detail-text">Slide up (native Reel CTA animation)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- SUMMARY -->
+  <section class="summary">
+    <h2>Summary</h2>
+    <div class="summary-grid">
+      <div class="key-messages">
+        <h3>Key Messages</h3>
+        <ul>
+          <li>BiRAGAS builds patient-level causal graphs, not one-size-fits-all models</li>
+          <li>30-70% of nodes are unique per patient &mdash; biology is individual</li>
+          <li>Skeleton DAGs are instantiated into personalized causal maps</li>
+          <li>Precision medicine requires precision causal inference</li>
+        </ul>
+      </div>
+      <div class="cta-section">
+        <h3>Call to Action</h3>
+        <div class="cta-box">
+          <div style="font-size:13px;color:rgba(255,255,255,0.6);">Visit</div>
+          <div class="cta-url">ayassbioscience.com</div>
+          <div class="cta-action">Learn More</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
