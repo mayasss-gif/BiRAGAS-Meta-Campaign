@@ -1323,7 +1323,7 @@ select.form-control { appearance: none; background-image: url("data:image/svg+xm
         <p>
           8501 Wade Blvd. Bldg. 9, Frisco, TX 75034<br>
           Phone: <a href="tel:9726686005">972-668-6005</a><br>
-          Email: <a href="mailto:ayassbioscience@ayassbioscience.com">ayassbioscience@ayassbioscience.com</a><br>
+          Email: <a href="mailto:contact@ayassbioscience.com">contact@ayassbioscience.com</a><br>
           Web: <a href="https://ayassbioscience.com" target="_blank" rel="noopener">ayassbioscience.com</a>
         </p>
       </div>
@@ -1503,6 +1503,25 @@ select.form-control { appearance: none; background-image: url("data:image/svg+xm
       var btn = form.querySelector('.btn-submit');
       btn.disabled = true;
       btn.textContent = 'Submitting...';
+      var name = form.querySelector('#name').value;
+      var email = form.querySelector('#email').value;
+      var company = form.querySelector('#company').value;
+      var title = form.querySelector('#title').value;
+      var area = form.querySelector('#therapeutic-area').value;
+      var challenge = form.querySelector('#challenge').value;
+      var modules = [];
+      form.querySelectorAll('input[name="modules"]:checked').forEach(function(cb) { modules.push(cb.value); });
+      var subject = encodeURIComponent('Scientific Alignment Meeting Request - ' + company);
+      var body = encodeURIComponent(
+        'Name: ' + name + '\n' +
+        'Email: ' + email + '\n' +
+        'Company: ' + company + '\n' +
+        'Job Title: ' + title + '\n' +
+        'Therapeutic Area: ' + area + '\n' +
+        'Module Interest: ' + modules.join(', ') + '\n\n' +
+        'Current Challenge:\n' + challenge
+      );
+      window.location.href = 'mailto:contact@ayassbioscience.com?subject=' + subject + '&body=' + body;
       setTimeout(function() {
         form.style.display = 'none';
         formSuccess.classList.add('show');
