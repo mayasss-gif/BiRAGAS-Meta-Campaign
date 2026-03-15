@@ -1502,30 +1502,37 @@ select.form-control { appearance: none; background-image: url("data:image/svg+xm
     if (allValid) {
       var btn = form.querySelector('.btn-submit');
       btn.disabled = true;
-      btn.textContent = 'Submitting...';
-      var name = form.querySelector('#name').value;
-      var email = form.querySelector('#email').value;
-      var company = form.querySelector('#company').value;
-      var title = form.querySelector('#title').value;
-      var area = form.querySelector('#therapeutic-area').value;
-      var challenge = form.querySelector('#challenge').value;
+      btn.textContent = 'Sending...';
+      var nameVal = (form.querySelector('[name="fullName"]') || {}).value || '';
+      var emailVal = (form.querySelector('[name="email"]') || {}).value || '';
+      var companyVal = (form.querySelector('[name="company"]') || {}).value || '';
+      var titleVal = (form.querySelector('[name="title"]') || {}).value || '';
+      var areaVal = (form.querySelector('[name="therapeutic"]') || {}).value || '';
+      var challengeVal = (form.querySelector('[name="challenge"]') || {}).value || '';
       var modules = [];
       form.querySelectorAll('input[name="modules"]:checked').forEach(function(cb) { modules.push(cb.value); });
-      var subject = encodeURIComponent('Scientific Alignment Meeting Request - ' + company);
+      var subject = encodeURIComponent('Scientific Alignment Meeting Request - ' + companyVal);
       var body = encodeURIComponent(
-        'Name: ' + name + '\n' +
-        'Email: ' + email + '\n' +
-        'Company: ' + company + '\n' +
-        'Job Title: ' + title + '\n' +
-        'Therapeutic Area: ' + area + '\n' +
+        'Name: ' + nameVal + '\n' +
+        'Email: ' + emailVal + '\n' +
+        'Company: ' + companyVal + '\n' +
+        'Job Title: ' + titleVal + '\n' +
+        'Therapeutic Area: ' + areaVal + '\n' +
         'Module Interest: ' + modules.join(', ') + '\n\n' +
-        'Current Challenge:\n' + challenge
+        'Current Challenge:\n' + challengeVal
       );
-      window.location.href = 'mailto:contact@ayassbioscience.com?subject=' + subject + '&body=' + body;
+      var mailtoLink = document.createElement('a');
+      mailtoLink.href = 'mailto:contact@ayassbioscience.com?subject=' + subject + '&body=' + body;
+      mailtoLink.target = '_blank';
+      document.body.appendChild(mailtoLink);
+      mailtoLink.click();
+      document.body.removeChild(mailtoLink);
       setTimeout(function() {
         form.style.display = 'none';
         formSuccess.classList.add('show');
-      }, 1200);
+        btn.disabled = false;
+        btn.textContent = 'Request Scientific Alignment';
+      }, 1500);
     }
   });
 
